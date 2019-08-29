@@ -1,0 +1,229 @@
+/* 外层盒子 */
+body {
+    background: #f5f5f5;
+}
+
+/* 顶部导航 */
+.suportnavbar {
+    border-top: 2px solid #47C2FB;
+    height: 52px;
+    line-height: 50px;
+    background-color: #fff;
+}
+
+.suportbar .m-l-80 {
+    margin-left: 80px;
+}
+
+.suportbar a {
+    color: #333;
+    padding-bottom: 14px;
+    font-size: 16px;
+    padding-bottom: 7px;
+}
+
+.suportbar .suporta {
+    border-bottom: 3px solid #47C2FB;
+}
+
+.suportbar a:hover {
+    color: #47C2FB;
+}
+
+/* 分类 */
+.suport-fenlei {
+    margin-top: 14px;
+}
+
+.suport-fenlei-bread {
+    height: 38px;
+    line-height: 38px;
+    padding-left: 17px;
+    font-size: 12px;
+    color: #999999;
+    background: #fff;
+    border-bottom: 1px solid #D8D7D7;
+}
+
+.suport-fenlei-bread a {
+    font-size: 12px;
+    color: #999999;
+}
+
+.suport-row-fenlei {
+    height: 61px;
+    padding: 14px 0;
+    overflow: hidden;
+    background: #fff;
+    transition: all .3s linear;
+    border-bottom: 1px solid #D8D7D7;
+}
+.suport-row-city {
+    height: 61px;
+    padding: 14px 0;
+    overflow: hidden;
+    background: #fff;
+    transition: all .3s linear;
+    border-bottom: 1px solid #D8D7D7;
+}
+.suport-row-key {
+    height: 61px;
+    padding: 14px 0;
+    overflow: hidden;
+    background: #fff;
+    transition: all .3s linear;
+    border-bottom: 1px solid #D8D7D7;
+}
+.suport-row-left {
+    width: 90px;
+    text-align: right;
+    float: left;
+    color: #999999;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.suport-row-medium {
+    width: 925px;
+    height:173px;
+    float: left;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.suport-row-right {
+    width: 179px;
+    float: left;
+    font-size: 16px;
+    color: #006FC0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.m-all {
+    float: left;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: rgba(0, 111, 192, 1);
+}
+.suport-row-medium a:hover{
+    color: #006FC0;
+}
+.medium-a {
+    float: left;
+    display: block;
+    padding: 5px 10px;
+    margin: 3px 10px;
+}
+
+.suport-empty {
+    margin-top: 12px;
+    width: 1200px;
+    height: 5px;
+    background: rgba(0, 111, 192, 1);
+}
+
+/* 商品样式 */
+.suport-goodsbox {
+    background: #fff;
+    overflow: hidden;
+}
+
+.suport-goods {
+    width: 240px;
+    height: 375px;
+    float: left;
+    padding: 26px 20px;
+    border: 1px solid #D8D7D7;
+}
+
+.suport-imgbox {
+    display: block;
+    width: 197px;
+    height: 202px;
+    padding: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(216, 215, 215, 1);
+}
+
+.suport-imgbox img {
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in;
+}
+
+.suport-imgbox img:hover{
+    transform: scale(1.2);
+}
+
+.suport-des {
+    height: 46px;
+    margin-top: 12px;
+    color: #616161;
+    font-size: 16px;
+    overflow: hidden;
+}
+.suport-location{
+    margin-top: 3px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 30px;
+    font-size: 12px;
+    color: #343434;
+    background-image: url(../images/location.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 19px 19px;
+}
+.suport-price{
+    width:64px;
+    height:24px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    margin-top: 10px;
+    background:rgba(0,111,192,1);
+}
+/* 分页 */
+.suport-pagenation{
+    width: 100%;
+    padding: 50px 0;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.page-button{
+    display: inline-block;
+    width:65px;
+    height:28px;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    background:rgba(0,111,192,1);
+    border-radius:2px;
+    margin: 0 10px;
+    cursor: pointer;
+    outline: 0;
+}
+.pages-list button{
+    width:28px;
+    height:28px;
+    text-align: center;
+    line-height: 28px;
+    outline: 0;
+    font-size: 16px;
+    color: #006FC0;
+    border: none;
+    background: #fff;
+    border-radius:2px;
+    cursor: pointer;
+    border:1px solid rgba(0,111,192,1);
+}
+.pages-list .page-active{
+    background: #006FC0;
+    color:#fff;
+}

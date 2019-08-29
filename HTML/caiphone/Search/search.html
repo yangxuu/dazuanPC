@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webview搜索</title>
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="head">搜索</div>
+    <!-- 输入框 -->
+    <div class="s-flex">
+        <div class="ipt-box">
+            <img class="ico" src="images/yx2.png" alt>
+            <input class="ipt" type="text" value="">
+            <div class="button">搜索</div>
+        </div>
+    </div>
+    <!-- 感兴趣的热词 -->
+    <!-- <div class="re-word">
+        <div class="hot-word">
+            <img src="images/yx_8.png" alt>
+            您可能感兴趣的热词
+        </div>
+        <div class="hotwords">
+            <div class="search-word">{{item}}</div>
+            <div class="search-word">{{item}}</div>
+            <div class="search-word">{{item}}</div>
+            <div class="search-word">{{item}}</div>
+            <div class="search-word">{{item}}</div>
+        </div>
+    </div> -->
+    <!-- 搜索到的商品 -->
+    <ol class="goods"></ol>
+    <!-- 分页 -->
+    <div class="page">
+        <button class="pad-10 tofirst">首页</button>
+        <button class="pad-12 prev">上一页</button>
+        <button class="pad-no">
+            <span class="currentPage">1</span>/
+            <span class="totalPage">1</span>
+        </button>
+        <button class="pad-12 next">下一页</button>
+        <button class="pad-10 tolast">尾页</button>
+    </div>
+    <!-- copyright -->
+    <div class="copyfoot">
+        <a class="block" href="http://www.cailiao.com">www.cailiao.com版权所有 中国材料网</a>
+        <p>Copyright 2009-2019 杭州大钻网络科技有限公司</p>
+        <p>浙ICP备13034685号</p>
+    </div>
+</body>
+<script>
+    var obj, total;
+    obj = {
+        "key": $(".ipt").val(),
+        "limit": 10,
+        page: 1
+    }
+    $(".page").hide();
+    $(".button").click(function () {
+        obj.key = $(".ipt").val();
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                total = data.total;
+                $(".totalPage").html(Math.ceil(total / 10))
+                $(".currentPage").html(obj.page)
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                    $(".page").show();
+                } else {
+                    alert("请输入搜索词")
+                }
+
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 下一页
+    $(".next").click(function () {
+        obj.page++;
+        if (obj.page > Math.ceil(total / 10)) {
+            obj.page = Math.ceil(total / 10)
+            return "";
+        }
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                // console.log(data.list)
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 上一页
+    $(".prev").click(function () {
+        obj.page--;
+        if (obj.page < 1) {
+            obj.page = 1;
+            return "";
+        }
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 首页
+    $(".tofirst").click(function () {
+        obj.page = 1;
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 尾页
+    $(".tolast").click(function () {
+        obj.page = Math.ceil(total / 10);
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+</script>
+
+</html>

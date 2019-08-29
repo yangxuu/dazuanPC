@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>天津市宏泰鑫金属门销售有限公司</title>
+    <script type="text/javascript">
+        var _global = {
+            shop_id: 1
+        };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div id=app></div>
+</body>
+<script>
+    var url = window.location.href;
+    var theme = 1;
+    $.ajax({
+        url: "http://vip.dazuan.com/index.php/api/index/get_shop",
+        type: "POST",
+        dataType: 'json',
+        data: {
+            'url': url
+        },
+        success: function (data) {
+            if (data.status == 1) {
+                $(document).attr("title", data.data.shop_name);
+                $("title").html(data.data.shop_name);
+                window._global.shop_id = data.data.shop_id
+                if (/Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)) { //手机端跳转
+                    theme = data.data.theme_h5
+                    var src = "/h5/static" + theme;
+                    // css
+                    var link = document.createElement("link");
+                    link.setAttribute("rel", "stylesheet");
+                    link.setAttribute("type", "text/css");
+                    link.setAttribute("href", src + "/css/app.css");
+                    var heads = document.getElementsByTagName("head");
+                    heads[0].appendChild(link);
+
+                    // js
+                    var script1 = document.createElement("script");
+                    script1.setAttribute("type", "text/javascript");
+                    script1.setAttribute("src", src + "/js/manifest.js");
+                    heads[0].appendChild(script1);
+
+                    var script2 = document.createElement("script");
+                    script2.setAttribute("type", "text/javascript");
+                    script2.setAttribute("src", src + "/js/vendor.js");
+                    heads[0].appendChild(script2);
+
+                    var script3 = document.createElement("script");
+                    script3.setAttribute("type", "text/javascript");
+                    script3.setAttribute("src", src + "/js/app.js");
+                    heads[0].appendChild(script3);
+
+                } else { //PC端跳转
+                    theme = data.data.theme_pc
+                    var src = "/pc/static" + theme;
+                    // css
+                    var link = document.createElement("link");
+                    link.setAttribute("rel", "stylesheet");
+                    link.setAttribute("type", "text/css");
+                    link.setAttribute("href", src + "/css/app.css");
+                    var heads = document.getElementsByTagName("head");
+                    heads[0].appendChild(link);
+
+                    // js
+                    var script1 = document.createElement("script");
+                    script1.setAttribute("type", "text/javascript");
+                    script1.setAttribute("src", src + "/js/manifest.js");
+                    heads[0].appendChild(script1);
+
+                    var script2 = document.createElement("script");
+                    script2.setAttribute("type", "text/javascript");
+                    script2.setAttribute("src", src + "/js/vendor.js");
+                    heads[0].appendChild(script2);
+
+                    var script3 = document.createElement("script");
+                    script3.setAttribute("type", "text/javascript");
+                    script3.setAttribute("src", src + "/js/app.js");
+                    heads[0].appendChild(script3);
+                }
+            } else {
+                alert("参数错误，无法打开网站")
+            }
+        },
+    })
+</script>
+
+</html>

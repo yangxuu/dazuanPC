@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{$title|default='中国材料网'}</title>
+	<meta name="keywords" content="{$keywords|default='中国材料网'}" />
+	<meta name="description" content="{$description|default='中国材料网'}" />
+	<script type="text/javascript">
+		//全局变量
+		var GV = {
+			ROOT: "__ROOT__/",
+			WEB_ROOT: "__WEB_ROOT__/",
+			JS_ROOT: "static/js/"
+		};
+	</script>
+	<script type="text/javascript" src="http://files.cailiao.com/cdn/static/pc/js/jquery-1.8.2.min.js"></script>
+	<link rel="icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
+	<link rel="shortcut icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
+	<link rel="stylesheet" href="http://files.cailiao.com/cdn/static/pc/css/newCommon1.css">
+	<link rel="stylesheet" href="http://files.cailiao.com/cdn/static/pc/css/newIndex1.css">
+	<link rel="stylesheet" href="newIndex1.css">
+	<script>
+		var _b2b_log = _b2b_log || [];
+		(function () {
+			var b2b = document.createElement('script');
+			b2b.src = 'https://b2b.baidu.com/slog/b.js';
+			b2b.async = 'async';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(b2b, s);
+		})();
+	</script>
+
+</head>
+
+<body>
+	<div class="new_head">
+		<div class="safe auto clearfix">
+			<div class="s-left" id="welcome">
+			</div>
+			<div class="s-right clearfix">
+				<!-- 新增 -->
+				<a href="" class="s-right-h bg-icon">企讯网首页</a>
+				<a href="__USERURL__/member/index/index" class="s-right-v">会员中心</a>
+				<a href="__SITEURL__/about/help" class="s-right-h">帮助中心</a>
+				<a href="__SITEURL__/about/product" class="s-right-a">黄金广告位</a>
+				<span class="line"></span>
+				<div class="s-right-n">
+					<div class="box">
+						<i class="ico1"></i>
+						<span class="ico-nav">网站导航</span>
+						<i class="ico2"></i>
+					</div>
+					<div class="fixed">
+						<a href="__SITEURL__/tradeinfo/">供应库</a>
+						<a href="__SITEURL__/seller/" class="m-l-80">求购中心</a>
+						<a href="__SITEURL__/productshow/" class="m-l-80">产品</a>
+						<a href="__SITEURL__/corporation/" class="m-l-80">黄页</a>
+						<a href="__SITEURL__/info/" class="m-l-80">资讯</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新增头部2 -->
+	<div class="qx-head2box">
+		<div class="qx-head2 safe auto clearfix">
+			<a href="" class="block qx-logo">
+				<img src="images/qx-logo.png" alt="">
+			</a>
+			<div class="qx-info">
+				<div class="qx-shopname">东莞市伽立实业投资有限公司</div>
+				<div class="qx-flag clearfix">
+					<div class="qx-flag1">
+						AI云网通 第<em>1</em>年
+					</div>
+					<div class="qx-flag2 flag-bg2">
+						实力认证
+					</div>
+					<div class="qx-flag2 flag-bg3">
+						认证企业
+					</div>
+					<div class="qx-flag2 flag-bg4">
+						移动店铺
+					</div>
+				</div>
+			</div>
+			<div class="qx-ipt">
+				<form action="" method="" class="qx-form clearfix">
+					<div class="qx-iptbox clearfix">
+						<div class="ipt-l-box">
+							<div class="default">
+								<span class="ipt-show">供应</span>
+							</div>
+							<div class="ipt-l-btns">
+								<div search_type='supply'>供应</div>
+								<div search_type='purchase'>求购</div>
+								<div search_type='company'>公司</div>
+								<div search_type='news'>资讯</div>
+							</div>
+						</div>
+						<input type="text" placeholder="输入关键词" name="" id="ipt">
+					</div>
+					<input type="submit" class="qx-submit" value="搜索">
+					<a href="" class="qx-btn-g">发布供应</a>
+				</form>
+				<div class="qx-keys">
+					<a href="http://gongchengjixiejianzhujixie.cailiao.com/" class="ipt-or">工程机械</a>
+					<a href="http://huanbao.cailiao.com/" class="ipt-or">环保</a>
+					<a href="http://wujin.cailiao.com/">五金</a>
+					<a href="http://huagong.cailiao.com/">化工</a>
+					<a href="http://anquan.cailiao.com/">安全</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新增头部3 -->
+	<div class="qx-head3box">
+		<div class="qx-head3 safe auto">
+			<div class="qxh3-left">
+				<div class="shopname-cn">
+					东莞市伽立实业投资有限公司
+				</div>
+				<div class="shopname-eng">
+					To provide you with the best quality goods and services
+				</div>
+			</div>
+			<div class="qxh3-medium">
+				<div class="qx-tele-key">联系电话：</div>
+				<div class="qx-tele-val">
+					14655786788
+				</div>
+			</div>
+			<div class="qxh3-right">
+				<div class="r-icon">
+					<img class="icon-img" src="images/qx-ico5.png" alt="">
+					<div class="icon-des" style="color:#D41817">如实描述</div>
+				</div>
+				<div class="r-icon">
+					<img class="icon-img" src="images/qx-ico6.png" alt="">
+					<div class="icon-des" style="color: #4F30DC">用心服务</div>
+				</div>
+				<div class="r-icon">
+					<img class="icon-img" src="images/qx-ico7.png" alt="">
+					<div class="icon-des" style="color: #FF702A">如实描述</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 分类导航 -->
+	<div class="add_navbar">
+		<div class="nav_wrapper">
+			<ul id="menu_navbar">
+				<li class="bar_li"><a class="router_link" href="">首页</a></li>
+				<!-- 一级类目 -->
+				<div class="firstLevel">
+					<li class="mouse_li">
+						<span>一级分类1</span>
+						<ul class="secondLevel">
+							<li class="level_li">
+								<a href="">二级分类1</a>
+							</li>
+							<li class="level_li">
+								<a href="">二级分类2</a>
+							</li>
+						</ul>
+					</li>
+					<li class="mouse_li">
+						<span>一级分类2</span>
+						<ul class="secondLevel">
+							<li class="level_li">
+								<a href="">二级分类1</a>
+							</li>
+							<li class="level_li">
+								<a href="">二级分类2</a>
+							</li>
+						</ul>
+					</li>
+				</div>
+
+				<!-- <li class="bar_li"><a class="router_link" href="">产品中心</a></li> -->
+				<li class="bar_li"><a class="router_link" href="">联系我们</a></li>
+				<li class="bar_li"><a class="router_link" href="">公司介绍</a></li>
+				<li class="bar_li"><a class="router_link" href="">诚信档案</a></li>
+
+			</ul>
+		</div>
+	</div>
+</body>
+<!-- 新增js -->
+<script>
+	$(".ipt-l-btns").hide();
+	$(".ipt-l-box").mouseenter(function () {
+		$(".ipt-l-btns").show();
+	}).mouseleave(function () {
+		$(".ipt-l-btns").hide();
+	})
+	$(".ipt-l-btns div").click(function () {
+		$(".ipt-show").html($(this).html())
+	})
+
+
+	// 分类
+	var counts=0;
+	$(".firstLevel .mouse_li").mouseenter(function () {
+		$(".firstLevel .secondLevel").eq(counts).hide();
+		$(".firstLevel .mouse_li").eq(counts).css({
+			background: '#2468b6'
+		});
+		counts = $(this).index();
+		$(".firstLevel .secondLevel").eq(counts).show();
+		$(".firstLevel .mouse_li").eq(counts).css({
+			background: '#2c80d1'
+		});
+	}).mouseleave(function(){
+		$(".firstLevel .secondLevel").eq(counts).show();
+		$(".firstLevel .mouse_li").eq(counts).css({
+			background: '#2c80d1'
+		});
+		counts = $(this).index();
+		$(".firstLevel .secondLevel").eq(counts).hide();
+		$(".firstLevel .mouse_li").eq(counts).css({
+			background: '#2468b6'
+		});
+	})
+</script>

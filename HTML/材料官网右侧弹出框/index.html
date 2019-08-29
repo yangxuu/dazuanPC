@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="icon" type="image/x-icon" href="icon.ico" /> -->
+    <title>材料网首页</title>
+</head>
+<link rel="stylesheet" href="css/newCommon.css">
+<link rel="stylesheet" href="css/sidebar.css">
+
+<body>
+    <!-- 右侧固定条 -->
+    <div class="right-fixed-box">
+        <div class="clickarea"></div>
+        <div class="hoverarea">
+            <ul class="ularea">
+                <li class="icon-man">
+                    <a href="" class="icon-block"></a>
+                    <a href="" class="put-man">会员中心</a>
+                </li>
+                <li class="icon-wx">
+                    <a href="" class="icon-block"></a>
+                    <img class="skanimg" src="images/skanimg.png" alt="">
+                </li>
+                <li class="icon-server">
+                    <a href="" class="icon-block"></a>
+                    <a href="" class="put-server">客服电话</a>
+                </li>
+                <li class="icon-top">
+                    <div class="put-top">返回顶部</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 弹出留言框 -->
+    <div class="fixed-sidebox">
+        <button class="shutdown"></button>
+        <div class="form-warn"></div>
+        <div class="sidebox-form">
+            <form class="real-form" action="" method="post">
+                <div class="warn"></div>
+                <div class="form-row">
+                    <div class="form-key">联系人</div>
+                    <input class="form-value val_name" type="text" placeholder="请输入联系人">
+                </div>
+                <div class="form-row">
+                    <div class="form-key">手机号</div>
+                    <input class="form-value val_mobile" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')"
+                        type="text" placeholder="请输入手机号">
+                </div>
+                <div class="form-row">
+                    <div class="form-key">公司名称</div>
+                    <input class="form-value val_company" type="text" placeholder="请输入公司名称">
+                </div>
+                <button class="form-submit" type="submit">在线留言</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/sidebar.js"></script>
+</html>

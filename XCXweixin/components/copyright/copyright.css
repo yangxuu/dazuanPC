@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* ----------copyright--------- */
+.copyright{
+    padding: 40rpx 0;
+}
+.col{
+    text-align: center;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+    color: #3F3F3F;
+}

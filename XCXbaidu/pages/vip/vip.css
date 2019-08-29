@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav-headbox {
+    width: 100%;
+    height: 77rpx;
+}
+/* 头部 */
+.nav-head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 28rpx;
+    font-weight: bold;
+    height: 77rpx;
+    padding: 0 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(227, 227, 227, 0.35);
+}
+.back{
+    width: 50rpx;
+    height:77rpx;
+    background-image: url("../../images/yx6.png");
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 15rpx 27rpx;
+}
+.nav-head .title {
+    font-size: 28rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+.nav-head .empty {
+    width: 20rpx;
+    height: 20rpx;
+}
+/* 长图片 */
+.imgbox {
+    width: 100%;
+}
+.popular-img {
+    width: 100%;
+    height: 9679rpx;
+}
+/* 留言 */
+.formbox{
+    width: 100%;
+    color: #fff;
+    background: #2A74DD;
+    padding-bottom: 50rpx;
+}
+.head{
+    font-size: 40rpx;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 50px;
+}
+.yourname{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30rpx 40rpx 0 50rpx;
+}
+.key_name{
+    font-size: 30rpx;
+    color: #F3F3F3;
+}
+.val_name{
+    height:78rpx;
+    background:rgba(243,243,243,1);
+    border-radius:10rpx;
+    padding-left: 23rpx;
+}
+.m-l-30{
+    margin-left: 40rpx;
+}
+.m-l-10{
+    margin-left: 5rpx;
+}
+.submit{
+    width:241rpx;
+    height:73rpx;
+    background:rgba(211,44,37,1);
+    border-radius:5rpx;
+    color: #fff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 73rpx;
+    margin-top: 60rpx;
+}

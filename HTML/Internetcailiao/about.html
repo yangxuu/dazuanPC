@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>材料移动端关于我们</title>
+    <script src="js/autoRem.js"></script>
+    <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+    <!-- 头部1 -->
+    <div class="yxhead1">
+        <img class="img-left" src="images/yx5.png" alt="">
+        <span>关于我们</span>
+        <div class="imgbox"></div>
+    </div>
+    <!-- 标题 -->
+    <div class="yxhead2">
+        <div class="yxhead2-title">关于我们</div>
+        <div class="yxhead2-para">
+            <span class="yxhead2-date">2019-6-14 12：05：35</span>
+            <span class="yxhead2-author-key">作者：</span>
+            <span class="yxhead2-author-val">中国材料网</span>
+            <img class="img-eye" src="images/yx12.png" alt="">
+            <span class="yxhead2-visit">12012</span>
+        </div>
+    </div>
+    <div class="content">
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+        炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+    </div>
+</body>
+<script src="js/fastclick.js"></script>
+<script src="js/zepto.min.js"></script>
+<script>
+    // 关闭当前网页
+    $(".yxhead1 .img-left").click(function () {
+        var userAgent = navigator.userAgent;
+        if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Chrome") != -1) {
+            window.location.href = "about:blank";
+        } else if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Linux') > -1) {
+            window.opener = null;
+            window.open('about:blank', '_self', '').close();
+        } else {
+            window.opener = null;
+            window.open("about:blank", "_self");
+            window.close();
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+<view class="nav-headbox">
+	<view class="nav-head">
+		<view class="back" bindtap="toindex"></view>
+		<text class="title">关于我们</text>
+		<view class="empty"></view>
+	</view>
+</view>
+<view class="about-info">
+	<text class="time">2019-6-14 12：05：35</text>
+	<text class="author">作者：中国材料网</text>
+	<text class="visit">12012</text>
+</view>
+<view class="about-content">
+
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+	白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽灯白炽
+</view>
+<copyright></copyright>

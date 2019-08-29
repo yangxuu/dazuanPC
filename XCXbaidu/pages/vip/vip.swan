@@ -1,0 +1,30 @@
+<view class="nav-headbox">
+	<view class="nav-head">
+		<view class="back" bindtap="toindex"></view>
+		<text class="title">超级会员</text>
+		<view class="empty"></view>
+	</view>
+</view>
+<!-- 长图片 -->
+<view class="imgbox">
+	<image class="popular-img" src="../../images/img1.jpg"></image>
+</view>
+<!-- 留言 -->
+<view class="formbox">
+	<form class="form" bindsubmit="formSubmit">
+		<view class="head">在线留言</view>
+		<view class="yourname">
+			<text class="key_name">联系人</text>
+			<input name="username" value="{{username}}" class="val_name m-l-30" type="text" placeholder="请输入联系人" />
+		</view>
+		<view class="yourname">
+			<text class="key_name">手机号</text>
+			<input name="usertele" value="{{usertele}}" maxlength="11" class="val_name m-l-30" type="number" placeholder="请输入手机号" />
+		</view>
+		<view class="yourname">
+			<text class="key_name">公司名称</text>
+			<input name="shopname" value="{{shopname}}" class="val_name m-l-10" type="text" placeholder="请输入公司名称" />
+		</view>
+		<button class="submit" formType="submit">立即获取商机</button>
+	</form>
+</view>

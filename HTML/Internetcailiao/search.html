@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>材料移动端搜索页</title>
+    <script src="js/autoRem.js"></script>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <!-- 头部1 -->
+    <div class="yxhead1">
+        <img class="img-left" src="images/yx5.png" alt="">
+        <span>搜索</span>
+        <div class="imgbox"></div>
+    </div>
+    <!-- 头部2 -->
+    <div class="yxhead2">
+        <img class="yxhead2-img-left" src="images/yx7.png" alt="">
+        <div class="yxhead2-ipt">
+            <input class="ipt" type="text" value="请输入关键词搜索">
+            <img class="yxhead2-ipt-img" src="images/yx8.png" alt="">
+        </div>
+        <button class="yxhead2-img-right">取消</button>
+    </div>
+    <!-- 搜索内容 -->
+    <ol class="goods"></ol>
+    <!-- 分页 -->
+    <div class="page">
+        <button class="pad-10 tofirst">首页</button>
+        <button class="pad-12 prev">上一页</button>
+        <button class="pad-no">
+            <span class="currentPage">1</span>/
+            <span class="totalPage">1</span>
+        </button>
+        <button class="pad-12 next">下一页</button>
+        <button class="pad-10 tolast">尾页</button>
+    </div>
+</body>
+<script src="js/fastclick.js"></script>
+<script src="js/zepto.min.js"></script>
+<script>
+    var obj, total;
+    obj = {
+        "key": $(".ipt").val(),
+        "limit": 10,
+        page: 1
+    }
+    $(".page").hide();
+    $(".yxhead2-img-right").html('');
+
+    // 点击取消
+    $(".yxhead2-img-right").click(function () {
+        $(".ipt").val('请输入关键词搜索')
+        $(this).html('');
+        $(".yxhead2-ipt-img").css({
+            left: '0.29rem',
+            transition: 'all .3s ease-in'
+        })
+    })
+    // 输入框聚焦
+    $(".ipt").focus(function () {
+        if (this.value == '请输入关键词搜索') {
+            this.value = "";
+            $(".yxhead2-img-right").html('取消');
+            $(".yxhead2-ipt-img").css({
+                left: '5.27rem',
+                transition: 'all .3s ease-in'
+            })
+        }
+    })
+    // 点击搜索
+    $(".yxhead2-ipt-img").click(function () {
+        if ($(".ipt").val() == '') {
+            // $(".ipt").val() = ' 请输入关键词搜索'
+            alert("请输入关键词搜索")
+        } else {
+            obj.key = $(".ipt").val();
+            $.ajax({
+                type: "POST",
+                url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+                dataType: "json",
+                data: {
+                    data: JSON.stringify(obj)
+                },
+                success: function (data) {
+                    total = data.total;
+                    $(".totalPage").html(Math.ceil(total / 10))
+                    $(".currentPage").html(obj.page)
+                    if (data.status) {
+                        var lists = "";
+                        for (var i = 0; i < data.list.length; i++) {
+                            lists += '<a class="list" href=http://m.cailiao.com/supply/' + data
+                                .list[i].id + '.html><img src=' + data.list[i].image +
+                                "><div class='right'><p class='proname'>" + data.list[i].name +
+                                '</p><p class="shopname">' + data.list[i].enterprise_name +
+                                '</p><p class="row"><span class="price">￥' + data.list[i]
+                                .price_description +
+                                '</span><span class="ask">询盘</span></p></div></a>'
+                        }
+                        $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                        $(".page").show();
+                    } else {
+                        alert("请输入搜索词")
+                    }
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        }
+    })
+    // 下一页
+    $(".next").click(function () {
+        obj.page++;
+        if (obj.page > Math.ceil(total / 10)) {
+            obj.page = Math.ceil(total / 10)
+            return "";
+        }
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                // console.log(data.list)
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 上一页
+    $(".prev").click(function () {
+        obj.page--;
+        if (obj.page < 1) {
+            obj.page = 1;
+            return "";
+        }
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 首页
+    $(".tofirst").click(function () {
+        obj.page = 1;
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 尾页
+    $(".tolast").click(function () {
+        obj.page = Math.ceil(total / 10);
+        $(".currentPage").html(obj.page)
+        $.ajax({
+            type: "POST",
+            url: "http://api-tp.cailiao.com/index.php/api/shop_item/search",
+            dataType: "json",
+            data: {
+                data: JSON.stringify(obj)
+            },
+            success: function (data) {
+                if (data.status) {
+                    var lists = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        lists += '<a class="list" href=http://m.cailiao.com/supply/' + data.list[i]
+                            .id + '.html><img src=' + data.list[i].image +
+                            "><div class='right'><p class='proname'>" + data.list[i].name +
+                            '</p><p class="shopname">' + data.list[i].enterprise_name +
+                            '</p><p class="row"><span class="price">￥' + data.list[i]
+                            .price_description + '</span><span class="ask">询盘</span></p></div></a>'
+                    }
+                    $(".goods").html(lists).show(); //将搜索到的结果展示出来 
+                } else {
+                    alert("请输入搜索词")
+                }
+            },
+            error: function () {
+                console.log('error')
+            }
+        })
+    })
+    // 关闭当前网页
+    $(".yxhead1 .img-left").click(function () {
+        var userAgent = navigator.userAgent;
+        if (userAgent.indexOf("Firefox") != -1 || userAgent.indexOf("Chrome") != -1) {
+            window.location.href = "about:blank";
+        } else if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Linux') > -1) {
+            window.opener = null;
+            window.open('about:blank', '_self', '').close();
+        } else {
+            window.opener = null;
+            window.open("about:blank", "_self");
+            window.close();
+        }
+    })
+    // 返回上一级
+    $(".yxhead2-img-left").click(function () {
+        history.go(-1)
+    })
+</script>
+
+</html>

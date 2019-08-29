@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/autoRem.js"></script>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <img class="bg_image" src="images/img1.jpg" alt="">
+    <form class="form" action="" method="post">
+        <div class="form-top1">在线留言</div>
+        <div class="yourname">
+            <span class="key_name">联系人</span>
+            <input class="val_name" type="text" name="" id="" placeholder="请输入联系人">
+        </div>
+        <div class="yourmobile">
+            <span class="key_mobile">手机号</span>
+            <input class="val_mobile" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')" type="text" name="" id="" placeholder="请输入手机号">
+        </div>
+        <div class="yourcompany">
+            <span class="key_company">公司名称</span>
+            <input class="val_company" type="text" name="" id="" placeholder="请输入公司名称">
+        </div>
+        <button class="submit">立即获取商机</button>
+    </form>
+    <!-- copyright -->
+    <div class="copyfoot">
+        <a class="block" href="http://www.m.cailiao.com">英文网址：www.cailiao.com版权所有 中国材料网</a>
+        <p>Copyright 2009-2019 杭州大钻网络科技有限公司 All Rights Reserved</p>
+        <p>浙ICP备13034685号 增值电信业务经营许可证：浙B2-20190210</p>
+        <p>浙公网安备 33010602000211号</p>
+    </div>
+    <!-- 脚部 -->
+    <div class="footer_box">
+        <div class="footer">
+            <div class="left">
+                <span>咨询热线：</span>
+                <span>0571-89807788</span>
+            </div>
+            <a href="tel:0571-89807788" class="right">点击拨打</a>
+        </div>
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+    var flag=1;
+    if(flag){
+        $(".bg_image").attr("src","images/img1.jpg")
+    }else{
+        $(".bg_image").attr("src","images/img2.jpg")
+    }
+    
+    $(".form").submit(function (e) {
+        e.preventDefault();
+        if ($(".val_name").val() && $(".val_mobile").val() && $(".val_company").val()) {
+            if (($(".val_name").val() != "请输入联系人") && ($(".val_mobile").val() != "请输入手机号") && ($(".val_company")
+                    .val() != "请输入公司名称")) {
+                        
+                $.ajax({
+                    type: "POST",
+                    url: "http://vip.dazuan.com/index.php/api/shop_item/consult_agent",
+                    dataType: "json",
+                    data: {
+                        name: $(".val_name").val(),
+                        tel: $(".val_mobile").val(),
+                        company: $(".val_company").val()
+                    },
+                    success: function (data) {
+                        $(".val_name").val("")
+                        $(".val_mobile").val("")
+                        $(".val_company").val("")
+                    },
+                    error: function () {
+                        alert("error")
+                    }
+                })
+            }
+        } else {
+            alert("请填入完整的信息")
+        }
+
+    })
+</script>
+
+</html>

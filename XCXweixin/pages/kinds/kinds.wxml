@@ -1,0 +1,28 @@
+<view class="container">
+	<view class="nav-headbox">
+		<view class="nav-head">
+			<view class="back" bindtap="toindex"></view>
+			<text class="title">商品分类</text>
+			<view class="empty"></view>
+		</view>
+	</view>
+	<view class="kindsbox">
+		<view class="kindsbox-left">
+			<view bindtap="list" data-x="{{index}}" class="{{flag==index?'left-item':''}}"
+				s-for="[1,2,3,4,5,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]">{{index}}</view>
+		</view>
+		<view class="kindsbox-right {{flag==index?'active':''}}" data-x="{{index}}"
+			s-for="[1,2,3,4,5,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]">
+			<view class="right-title">
+				<view class="title">{{index}}</view>
+				<view class="line"></view>
+			</view>
+			<view class="right-content" s-for="[1,2,3,4,5,6,7,8,9,0]">
+				<view class="content-title">白炽灯</view>
+				<view class="text-container">
+					<text s-for="[1,2,3,4,5,6,7,8,8,9,0,0,0]">彩色灯泡</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

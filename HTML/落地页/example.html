@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/autoRem.js"></script>
+    <link rel="stylesheet" href="css/example.css">
+</head>
+
+<body>
+    <!-- 蒙层 -->
+    <div class="body">
+        <div class="medium">
+            <div class="m-head">·在线留言·</div>
+            <div class="shutdown"></div>
+            <form action="" method="post" class="form">
+                <div class="yourname m-row">
+                    <span class="key_name key">联系人</span>
+                    <input class="val_name value" type="text" name="" id="" placeholder="请输入联系人">
+                </div>
+                <div class="yourmobile m-row">
+                    <span class="key_mobile key">手机号</span>
+                    <input class="val_mobile value" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')"
+                        type="text" name="" id="" placeholder="请输入手机号">
+                </div>
+                <div class="yourcompany m-row">
+                    <span class="key_company key">公司名称</span>
+                    <input class="val_company value" type="text" name="" id="" placeholder="请输入公司名称">
+                </div>
+                <button class="submit">立即留言</button>
+            </form>
+        </div>
+    </div>
+    <!-- 脚部 -->
+    <div class="footer_box">
+        <div class="footer">
+            <div class="f-left">
+                <a href="" class="icon-box">
+                    <img src="images/icon_3.png" alt="">
+                    <div class="icon-title">首页</div>
+                </a>
+                <a href="" class="icon-box">
+                    <img src="images/icon_2.png" alt="">
+                    <div class="icon-title">店铺</div>
+                </a>
+                <div class="icon-box" onclick="model()">
+                    <img src="images/icon_1.png" alt="">
+                    <div class="icon-title">留言</div>
+                </div>
+            </div>
+            <a href="#" class="f-right">立即拨打</a>
+        </div>
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+    function model() {
+        $(".body").show()
+    }
+    $(".shutdown").click(function(){
+        $(".body").hide()
+    })
+    $(".form").submit(function (e) {
+        e.preventDefault();
+        if ($(".val_name").val() && $(".val_mobile").val() && $(".val_company").val()) {
+            if (($(".val_name").val() != "请输入联系人") && ($(".val_mobile").val() != "请输入手机号") && ($(".val_company")
+                    .val() != "请输入公司名称")) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://vip.dazuan.com/index.php/api/shop_item/consult_agent",
+                    dataType: "json",
+                    data: {
+                        name: $(".val_name").val(),
+                        tel: $(".val_mobile").val(),
+                        company: $(".val_company").val()
+                    },
+                    success: function (data) {
+                        $(".val_name").val("")
+                        $(".val_mobile").val("")
+                        $(".val_company").val("")
+                        $(".body").hide()
+                    },
+                    error: function () {
+                        alert("error")
+                    }
+                })
+            }
+        } else {
+            alert("请填入完整的信息")
+        }
+
+    })
+</script>
+
+</html>

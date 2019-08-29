@@ -1,0 +1,453 @@
+.theme(@backcolor: purple) {
+
+    // head
+    .headerbox {
+        height: 75px;
+        background: #1b1d23;
+    }
+
+    .header {
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left_logo {
+        width: 200px;
+        height: 45px;
+        border: 1px solid #fff;
+    }
+
+    .right_nav {
+        overflow: hidden;
+    }
+
+    .right_nav a {
+        opacity: 1;
+        display: block;
+        width: 95px;
+        height: 75px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        line-height: 75px;
+        float: left;
+        font-weight: bold;
+    }
+
+    .right_nav a:hover {
+        background-color: #fff;
+        color: #1b1d23;
+    }
+
+    .right_nav .router-link-exact-active {
+        background-color: #fff;
+        color: #1b1d23;
+    }
+
+    .search_btn {
+        float: left;
+        width: 123px;
+        height: 40px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        background: rgba(52, 178, 140, 1);
+        border-radius: 3px;
+        margin-top: 17.5px;
+        margin-left: 30px;
+    }
+
+    // index
+    .banner {
+        width: 100%;
+        height: 425px;
+        overflow: hidden;
+        background: @backcolor;
+    }
+
+    #vid {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 关于我们 */
+    .about {
+        margin-top: 65px;
+        text-align: center;
+        font-size: 29px;
+        color: #333333;
+        font-weight: 600;
+    }
+
+    .eng {
+        margin-top: 14px;
+        text-align: center;
+        font-size: 30px;
+        color: #333333;
+    }
+
+    .content {
+        width: 73%;
+        height: 90px;
+        font-size: 16px;
+        color: #333333;
+        margin: 50px auto 0;
+        text-align: center;
+        line-height: 190%;
+    }
+
+    .more {
+        display: block;
+        width: 131px;
+        height: 43px;
+        background: rgba(27, 29, 35, 1);
+        border-radius: 3px;
+        font-size: 15px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 43px;
+        margin: 40px auto 0;
+    }
+
+    .imgbox {
+        width: 960px;
+        height: 543px;
+        margin: 70px auto 0;
+        background: @backcolor;
+    }
+
+    .desc {
+        width: 960px;
+        margin: 40px auto 0;
+        overflow: hidden;
+    }
+
+    .desc_left {
+        width: 50%;
+        float: left;
+    }
+
+    .row1 .spot {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        background: rgba(52, 178, 140, 1);
+        border-radius: 50%;
+    }
+
+    .row1 .title {
+        color: #333333;
+        font-size: 18px;
+        margin-left: 5px;
+        font-weight: 600;
+    }
+
+    .row2 {
+        padding-left: 19px;
+        margin-top: 18px;
+        color: #333333;
+        font-size: 15px;
+    }
+
+    .desc_right {
+        width: 50%;
+        float: left;
+    }
+
+    /* 说明 */
+    .introduce {
+        width: 100%;
+        height: 425px;
+        overflow: hidden;
+        margin-top: 110px;
+        background-color: #272a33;
+        /* background-image: url(); */
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+
+    .intro_left {
+        width: 50%;
+        height: 425px;
+        float: left;
+    }
+
+    .intro_right {
+        width: 50%;
+        height: 425px;
+        float: left;
+        overflow: hidden;
+        padding: 0 100px;
+    }
+
+    .r_title {
+        font-size: 24px;
+        color: #8e93a2;
+        font-weight: bold;
+        margin-top: 120px;
+    }
+
+    .r_content {
+        /* width: 587px; */
+        height: 105px;
+        margin-top: 20px;
+        font-weight: 15px;
+        color: #8e93a2;
+        line-height: 180%;
+    }
+
+    .tomore {
+        display: block;
+        margin-top: 30px;
+        width: 131px;
+        height: 43px;
+        text-align: center;
+        line-height: 43px;
+        color: #fff;
+        font-size: 15px;
+        background: rgba(52, 178, 140, 1);
+        border-radius: 3px;
+    }
+
+    /* 新闻资讯 */
+    .news_box {
+        width: 73%;
+        margin: 0 auto;
+        padding: 60px 0 100px;
+        overflow: hidden;
+    }
+
+    .news_item {
+        float: left;
+        display: block;
+        width: 32%;
+        height: 437px;
+        margin: 0 0.6%;
+        overflow: hidden;
+        opacity: 1;
+    }
+
+    .img {
+        width: 100%;
+        height: 290px;
+        overflow: hidden;
+        background: @backcolor;
+    }
+
+    .img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .news_para {
+        width: 100%;
+    }
+
+    .p_row1 {
+        padding: 30px 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .p_row1 .spot {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        background: rgba(52, 178, 140, 1);
+        border-radius: 50%;
+    }
+
+    .p_row1 .des {
+        color: #333333;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .p_row2 {
+        overflow: hidden;
+        padding: 20px 25px 35px;
+        color: #333333;
+        font-size: 14px;
+    }
+
+    .news_item:hover {
+        box-shadow: 0 2px 10px #d8d8d8;
+    }
+
+    .map_box {
+        width: 100%;
+        height: 470px;
+        background-color: #2e3038;
+    }
+
+    .map {
+        width: 73%;
+        margin: 0 auto;
+        height: 470px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #map {
+        width: 45%;
+        height: 300px;
+        border: 10px solid #8e93a2;
+    }
+
+    .map_right {
+        width: 35%;
+        height: 330px;
+        overflow: hidden;
+    }
+
+    .shopname {
+        font-size: 24px;
+        color: #898e9d;
+        margin-top: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .shopaddress,
+    .shoptelephone,
+    .shopemail {
+        font-size: 15px;
+        color: #898e9d;
+        margin-top: 45px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    //   shuoming
+    .ban {
+        width: 100%;
+        height: 240px;
+        background: @backcolor;
+    }
+
+    .content_copy {
+        width: 74%;
+        margin: 50px auto 70px;
+        overflow: hidden;
+    }
+
+    .content_left {
+        width: 285px;
+        position: fixed;
+        z-index: 999;
+        left: 10%;
+        bottom: 10%;
+        z-index: 999;
+    }
+
+    .left_title {
+        width: 100%;
+        font-size: 20px;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .content_left ul {
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .content_left ul li {
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+
+    .floor_t {
+        float: left;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        margin-top: 6px;
+        border: 1px solid #333333;
+    }
+
+    .floor_d {
+        float: right;
+        width: 263px;
+    }
+
+    .bolder {
+        font-weight: bold;
+    }
+
+    .pot {
+        background-color: #30b191;
+        border: none;
+    }
+
+    .totop {
+        width: 131px;
+        height: 43px;
+        text-align: center;
+        line-height: 43px;
+        color: #fff;
+        font-size: 15px;
+        margin-top: 20px;
+        cursor: pointer;
+        background: rgba(27, 29, 35, 1);
+        border-radius: 3px;
+    }
+
+    .content_right {
+        width: 78%;
+        float: right;
+    }
+
+    .part_1 {
+        width: 100%;
+    }
+
+    .part_1 .title_1 {
+        font-size: 20px;
+        color: #333333;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+
+    .part_1 .img_box {
+        display: block;
+        width: 100%;
+        height: 635px;
+        background: @backcolor;
+    }
+
+    // 脚部
+    .footerbox {
+        height: 70px;
+        background-color: #181c27;
+    }
+
+    .footer {
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #8e93a2;
+    }
+
+    .foot_link {
+        font-size: 14px;
+        color: #8e93a2;
+    }
+
+}

@@ -1,0 +1,50 @@
+<!-- 当前分类头部 -->
+<view class="kindsbox">
+    <view class="back" bindtap="backto"></view>
+    <view class="theme">{{keywords}}</view>
+    <view class="empty"></view>
+</view>
+<!-- 搜索框头部 -->
+<view class="search-box">
+	<view bindtap="toindex" class="imgbox"></view>
+	<view class="ipt-box">
+		<input bindinput="bindInput" placeholder="请输入关键词搜索" class="ipt" />
+		<image class="big-img" src="../../images/yx8.png"></image>
+	</view>
+	<view class="text" bindtap="submit">搜索</view>
+</view>
+<!-- 其他页面跳转过来默认展示的商品 -->
+
+
+
+
+
+
+
+<!-- 搜索到的商品 -->
+<view class="consult" s-if="flag">
+	<navigator class="product" url="/pages/detail/detail?id={{item.id}}" s-for="info">
+		<view class="p-left">
+			<image src="{{item.image}}"></image>
+		</view>
+		<view class="p-right">
+			<view class="p-name">{{item.name}}</view>
+			<view class="c-name">{{item.enterprise_name}}</view>
+			<view class="p-price">
+                <view class="price">￥{{item.price_description}}</view>
+                <view class="ask">询盘</view>
+            </view>
+		</view>
+	</navigator>
+    <!-- 分页 -->
+    <view class="page">
+        <view bindtap="tofirst" class="pad-10">首页</view>
+        <view bindtap="prev" class="pad-12">上一页</view>
+        <view class="pad-no">
+            <text class="currentPage">{{page}}</text>/
+            <text class="totalPage">{{total}}</text>
+        </view>
+        <view bindtap="next" class="pad-12">下一页</view>
+        <view bindtap="tolast" class="pad-10">尾页</view>
+    </view>
+</view>

@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情页</title>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .safe {
+        width: 1200px;
+    }
+
+    .auto {
+        margin: 0 auto;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+    /* 头部导航 */
+    .addbar-box{
+        width: 100%;
+        height: 50px;
+        background: #48C2FB;
+    }
+    .addbar{
+        overflow: hidden;
+    }
+    .addbar .block{
+        width: 90px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+        display: block;
+        color: #fff;
+        font-size: 16px;
+    }
+    .m-l-55{
+        margin-left: 55px;
+    }
+/* 头部导航 */
+
+
+
+
+
+    .navbar {
+        color: #1b1b1b;
+        font-size: 12px;
+        padding: 12px 0;
+    }
+
+    .navbar a {
+        color: #1b1b1b;
+        font-size: 12px;
+    }
+
+    .pro {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .pro .left {
+        width: 440px;
+        height: 540px;
+        float: left;
+        position: relative;
+    }
+
+    #box {
+        width: 440px;
+        height: 438px;
+        overflow: hidden;
+        border: 1px solid #dedede;
+    }
+
+    #box img {
+        width: 100%;
+        height: 438px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    #img-box {
+        width: 100%;
+        height: 102px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #ul {
+        overflow: hidden;
+    }
+
+    #ul li {
+        width: 65px;
+        height: 60px;
+        float: left;
+        margin: 0 5px;
+    }
+
+    #img-box li img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #left,
+    #right {
+        width: 18px;
+        height: 60px;
+        border: none;
+    }
+
+    #left {
+        background-image: url(images/arrow1.png);
+        background-repeat: no-repeat;
+        background-position: center
+    }
+
+    #right {
+        background-image: url(images/arrow2.png);
+        background-repeat: no-repeat;
+        background-position: center
+    }
+
+    #view {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        position: absolute;
+        overflow: hidden;
+        left: 480px;
+        top: 2px;
+        z-index: 999;
+        display: none;
+    }
+
+    #view img {
+        width: 880px;
+        height: 876px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .pro .right {
+        float: right;
+        width: 720px;
+    }
+
+    .right #title {
+        font-size: 20px;
+        color: #000;
+    }
+
+    .right .des {
+        font-size: 12px;
+        color: #053FAE;
+        margin-top: 10px;
+    }
+
+    .right .r-t {
+        width: 100%;
+        height: 380px;
+        margin-top: 5px;
+        position: relative;
+        background: #FFFDED;
+        border-bottom: 1px solid #666;
+    }
+
+    .over {
+        overflow: hidden;
+    }
+
+    .r-t .name {
+        font-size: 14px;
+        color: #000;
+        font-weight: bolder;
+    }
+
+    .r-t .same {
+        color: #181818;
+        font-size: 16px;
+        margin-left: 50px;
+    }
+
+    .r-t .p {
+        margin-top: 25px;
+        padding-left: 15px;
+    }
+
+    .r-t .over .price {
+        color: #D7272D;
+        font-size: 24px;
+    }
+
+    .contact {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 40px;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+
+    .contact div {
+        float: left;
+    }
+
+    .contact .icon-box {
+        width: 42px;
+        height: 43px;
+        background-image: url(images/icon-5.png)
+    }
+
+    .call {
+        font-size: 26px;
+    }
+
+    .call .phone {
+        margin-left: 10px;
+    }
+
+    .contact .link-man {
+        margin-left: 35px;
+    }
+
+    .link-man .person {
+        font-family: "宋体"
+    }
+
+    .r-t .line {
+        width: 100%;
+        height: 1px;
+        margin-top: 25px;
+        border: 0.5px dashed #c4c4c4;
+    }
+
+    .r-t .btn {
+        width: 100%;
+        font-family: "宋体";
+        font-weight: bolder;
+
+    }
+
+    .btn .box {
+        width: 112px;
+        height: 40px;
+        border-radius: 4px;
+        float: left;
+        margin-left: 65px;
+        margin-top: 12px;
+        cursor: pointer;
+    }
+
+    .btn .ask {
+        color: #030303;
+        font-size: 16px;
+        text-align: center;
+        line-height: 40px;
+        background-color: #EC965E;
+    }
+
+    .btn .ask .ico {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        background-image: url(images/icon-1.png);
+        position: relative;
+        top: -3px;
+    }
+
+    .btn .link {
+        width: 112px;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        color: #030303;
+        font-size: 16px;
+        text-align: center;
+        line-height: 37px;
+        border: 2px solid #FC924C;
+    }
+
+    .ask .m-l-5 {
+        margin-left: -5px;
+    }
+
+    .btn .look {
+        color: #030303;
+        font-size: 16px;
+        text-align: center;
+        line-height: 40px;
+        overflow: hidden;
+        background-color: #FCAF7D;
+        transition: all .3s;
+    }
+
+    .look:hover {
+        height: 150px;
+    }
+
+    .look .img-boxs {
+        display: block;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+        background: red;
+        overflow: hidden;
+    }
+
+    .img-boxs img {
+        width: 100%;
+        height: auto;
+    }
+
+    .r-t .spe {
+        display: block;
+        width: 100px;
+        height: 38px;
+        background: #4D4D4D;
+        color: #fff;
+        text-align: center;
+        line-height: 38px;
+        position: absolute;
+        right: 0;
+        font-size: 14px;
+        bottom: 0;
+    }
+
+    .spe .ico1 {
+        display: inline-block;
+        width: 17px;
+        height: 18px;
+        vertical-align: middle;
+        background-image: url(images/icon-2.png);
+        position: relative;
+        top: -2px;
+    }
+
+    /* 遮罩层 */
+    .mark {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        color: #151515;
+        display: none;
+    }
+
+    .mark>.content {
+        width: 460px;
+        height: 400px;
+        background: #ffffff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 25px 50px;
+        border-radius: 10px;
+    }
+
+    .mark>.content>.title {
+        font-weight: bolder;
+        margin: 0 auto;
+        font-size: 18px;
+        width: 100px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .mark>.content>.line {
+        font-weight: bolder;
+        margin: 10px auto;
+        width: 70px;
+        height: 1px;
+        border: 1px solid #232323;
+    }
+
+    .forward {
+        font-size: 16px;
+        font-weight: bolder;
+        display: inline-block;
+        width: 80px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .f-row {
+        margin-top: 30px;
+    }
+
+    .input input {
+        width: 200px;
+        height: 30px;
+        margin-left: 5px;
+        border: none;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+    }
+
+    .input textarea {
+        width: 200px;
+        height: 50px;
+        margin-left: 5px;
+        border: none;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+    }
+
+    .submit {
+        width: 102px;
+        margin: 45px auto 0;
+        height: 27px;
+        color: #ffffff;
+        background: #181818;
+        font-size: 14px;
+        line-height: 27px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .spot {
+        border: 1px solid #f19149;
+    }
+
+    .shut {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        color: #999999;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+    }
+
+    .shut:hover {
+        color: red;
+    }
+
+    /* 推荐商品 */
+    .recom {
+        width: 180px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: #3D6BC6;
+        color: #fff;
+        border-radius: 12px;
+        margin: 48px auto 26px;
+    }
+
+    .recom .ico2 {
+        display: inline-block;
+        width: 17px;
+        height: 20px;
+        vertical-align: middle;
+        background-image: url(images/icon-3.png);
+        position: relative;
+        top: -4px;
+    }
+
+    .products {
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px dotted #cecece;
+    }
+
+    .products .pro {
+        width: 210px;
+        float: left;
+        margin: 0 15px 10px;
+    }
+
+    .products .pro .img {
+        width: 210px;
+        height: 210px;
+        border: 1px solid #cecece;
+        background: #fff;
+        overflow: hidden;
+    }
+
+    .pro .title {
+        font-size: 10px;
+        color: #5f5f5f;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .pro .price {
+        font-size: 14px;
+        color: #D7272D;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .pro .pri {
+        font-size: 14px;
+        font-weight: bolder;
+        color: #D7272D;
+    }
+
+    .view-b {
+        margin-top: 60px;
+        overflow: hidden;
+    }
+
+    .view-b .left {
+        width: 250px;
+        float: left;
+        margin-bottom: 50px;
+    }
+
+    .left .info {
+        width: 100%;
+        font-size: 14px;
+        color: #5f5f5f;
+        border: 1px solid #cecece;
+    }
+
+    .info .head {
+        width: 100%;
+        height: 70px;
+        color: #fff;
+        font-size: 34px;
+        padding: 0 14px;
+        text-align: center;
+        line-height: 70px;
+        background-image: url(images/icon-6.png);
+        background-repeat: no-repeat;
+    }
+
+    .info .name {
+        color: #0644CE;
+        font-size: 14px;
+        padding: 0 14px;
+        text-align: center;
+    }
+
+    .info .row {
+        margin-top: 15px;
+        padding: 0 14px;
+    }
+
+    .info .color {
+        color: #000;
+    }
+
+    .info .line {
+        margin-top: 10px;
+        width: 100%;
+        height: 1px;
+        border: 0.5px dotted #cecece;
+    }
+
+    .info .shop {
+        display: block;
+        width: 100%;
+        height: 57px;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 12px;
+        background: #3D6BC6;
+        line-height: 57px;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .shop .ico3 {
+        display: inline-block;
+        width: 23px;
+        height: 18px;
+        vertical-align: middle;
+        background-image: url(images/icon-4.png);
+        position: relative;
+        left: -5px;
+        top: -2px;
+    }
+
+    .hot {
+        width: 100%;
+        margin-top: 40px;
+        border: 1px solid #cecece;
+        background: #f7f7f7;
+    }
+
+    .hot .head {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bolder;
+        background: #3D6BC6;
+    }
+
+    .hot-pro {
+        width: 234px;
+        margin: 30px 8px;
+    }
+
+    .hot-pro .img {
+        width: 234px;
+        height: 234px;
+        overflow: hidden;
+        border: 1px solid #cecece;
+    }
+
+    .hot-pro .title {
+        color: #000;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+        font-weight: bolder;
+    }
+
+    .hot-pro .price {
+        color: #D7272D;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+        font-weight: bolder;
+    }
+
+    .hot .line {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+        border: 0.5px dotted #cecece;
+    }
+
+    .view-b .right {
+        float: right;
+        width: 928px;
+        border: 1px solid #cecece;
+    }
+
+    .view-b .left .info .icon-2 {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background-image: url(images/icon-22.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 1px;
+        left: 30px;
+    }
+
+    .right .head-box {
+        width: 100%;
+        height: 45px;
+        border-bottom: 1px solid #cecece;
+    }
+
+    .head-box .head {
+        width: 140px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        background: #3D6BC6;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .right .ta-head {
+        width: 100%;
+        font-size: 14px;
+        color: #5f5f5f;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .table {
+        font-size: 14px;
+        width: 770px;
+        /* height: 402px; */
+        margin: 0 auto;
+        overflow: hidden;
+        border-top: 1px solid #cecece;
+        border-right: 1px solid #cecece;
+        border-bottom: 1px solid #cecece;
+    }
+
+    .table div {
+        float: left;
+    }
+
+    .table .t-l {
+        width: 130px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 1px solid #cecece;
+        border-right: 1px solid #cecece;
+        border-left: 1px solid #cecece;
+        background: #f5f5f5;
+    }
+
+    .table .t-r {
+        width: 254px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: #fff;
+        border-bottom: 1px solid #cecece;
+    }
+
+    .right .pic {
+        width: 100%;
+        font-size: 14px;
+        color: #5f5f5f;
+        text-align: center;
+        padding: 15px 0;
+        margin: 20px 0;
+    }
+
+    .right .img-box {
+        width: 884px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .img-box img,
+    .img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .word {
+        height: 30px;
+        line-height: 30px;
+        background-color: #505050;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 135px;
+    }
+
+    .word a {
+        color: #fff;
+        margin-left: 10px;
+    }
+
+    .word .head {
+        color: #b3b3b3;
+    }
+
+    .footer {
+        width: 100%;
+        height: 218px;
+        background-color: #3A3A3A;
+        font-size: 12px;
+        color: #fff;
+        overflow: hidden;
+        margin-top: 25px;
+    }
+
+    .row11,
+    .row22,
+    .row33,
+    .row44,
+    .row55 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .row11 a {
+        display: inline-block;
+        height: 15px;
+        margin: 5px 0;
+        padding: 0 5px;
+        font-size: 12px;
+        color: #b3b3b3;
+        vertical-align: middle;
+        border-right: 1px solid #b3b3b3;
+    }
+
+    .row55 {
+        color: #b3b3b3;
+    }
+
+    .bottom {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .bottom .bom-word {
+        display: inline-block;
+        width: 100px;
+        color: #b3b3b3;
+        text-align: center;
+    }
+
+    .bottom .line {
+        display: inline-block;
+        width: 300px;
+        height: 1px;
+        background: #b3b3b3;
+    }
+</style>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="addbar-box">
+        <ul class="safe auto addbar">
+            <a href="###" class="block">企业首页</a>
+            <a href="###" class="block m-l-55">产品中心</a>
+            <a href="###" class="block m-l-55">企业介绍</a>
+            <a href="###" class="block m-l-55">联系方式</a>
+            <a href="###" class="block m-l-55">代理加盟</a>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <div class="safe auto">
+            <div class="navbar">
+                <span>当前位置：</span>
+                <a href="">中国材料网></a>
+                <a href="">安全、防护></a>
+                <a href="">防盗、报警器材及系统></a>
+                <a href="">个人报警器></a>
+                <a href=""> 防爆人体静电释放器/人体静电消除器厂家</a>
+            </div>
+            <div class="pro">
+                <div class="left" id="big">
+                    <div id="box">
+                        <img src="images/1.png" alt="">
+                        <img src="images/2.png" alt="">
+                        <img src="images/3.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/2.png" alt="">
+                    </div>
+                    <div id="view">
+                        <img src="images/1.png" alt="">
+                        <img src="images/2.png" alt="">
+                        <img src="images/3.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/2.png" alt="">
+                    </div>
+
+                    <div id="img-box">
+                        <button id="left"></button>
+                        <ul id="ul">
+                            <li><img src="images/1.png" alt=""></li>
+                            <li><img src="images/2.png" alt=""></li>
+                            <li><img src="images/3.png" alt=""></li>
+                            <li><img src="images/1.png" alt=""></li>
+                            <li><img src="images/2.png" alt=""></li>
+                        </ul>
+                        <button id="right"></button>
+                    </div>
+                </div>
+                <div class="right">
+                    <h3 id="title">商品名称标题1商品名称标题1商品名称标题1商品名称标题1</h3>
+                    <div class="des">优质钻床产品VOLKSWAGEN/大众Z3050液压摇臂钻床，欢迎选购！</div>
+                    <div class="r-t">
+                        <div class="over">
+                            <p class="p"><span class="name">价格</span> <span class="price same"><span
+                                        class="pri">￥</span>110</span></p>
+                            <p class="p"><span class="name">产品数量</span><span class="same">956565个</span></p>
+                            <p class="p"><span class="name">企业</span><span class="same">人体静音消除厂家</span></p>
+                            <p class="p"><span class="name">地址</span><span class="same">浙江省杭州市余杭区五常街道</span></p>
+                        </div>
+
+                        <div class="contact">
+                            <div class="icon-box"></div>
+                            <div class="link-man">
+                                <p class="person">李先生&#x3000;<span>经理</span></p>
+                                <p class="call">
+                                    <span class="mobile">13923456781</span>
+                                    <span class="phone">444-235-4444</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="btn clearfix">
+                            <div class="ask box"><span class="ico"></span> <span class="m-l-5">立即询价</span></div>
+                            <a href="" class="link box">进入商铺</a>
+                            <div class="look box">
+                                <span>手机查看</span>
+                                <span class="img-boxs"><img src="" alt=""></span>
+                            </div>
+                        </div>
+                        <a href="" class="spe"><span class="ico1"></span> 企业官网</a>
+                    </div>
+                </div>
+            </div>
+            <div class="recom"><span class="ico2"></span> 推荐商品</div>
+            <div class="products">
+                <div class="pro">
+                    <div class="img"></div>
+                    <p class="title">摇臂钻床Z3050液压摇臂钻 半液压摇臂…</p>
+                    <p class="price">￥888</p>
+                </div>
+                <div class="pro">
+                    <div class="img"></div>
+                    <p class="title">摇臂钻床Z3050液压摇臂钻 半液压摇臂…</p>
+                    <p class="price">￥888</p>
+                </div>
+                <div class="pro">
+                    <div class="img"></div>
+                    <p class="title">摇臂钻床Z3050液压摇臂钻 半液压摇臂…</p>
+                    <p class="price">￥888</p>
+                </div>
+                <div class="pro">
+                    <div class="img"></div>
+                    <p class="title">摇臂钻床Z3050液压摇臂钻 半液压摇臂…</p>
+                    <p class="price">￥888</p>
+                </div>
+                <div class="pro">
+                    <div class="img"></div>
+                    <p class="title">摇臂钻床Z3050液压摇臂钻 半液压摇臂…</p>
+                    <p class="price">￥888</p>
+                </div>
+            </div>
+            <div class="view-b">
+                <div class="left">
+                    <div class="info">
+                        <div class="head"></div>
+                        <p class="name">企业公司名称标题1</p>
+                        <p class="row1 row"><span>企业服务：</span><span class="icon-2"></span> </p>
+                        <p class="row2 row">联系姓名：<span class="color">郭**</span></p>
+                        <p class="row3 row">手机号码：<span class="color">12333*********</span></p>
+                        <p class="row4 row">电话号码：<span class="color">37865********</span></p>
+                        <p class="row5 row">传真：<span class="color">233*******</span></p>
+                        <p class="row6 row">所在地区：<span class="color">浙江省杭州市余杭区五常街道</span></p>
+                        <p class="row7 row">主营产品：<span class="color">**********</span></p>
+                        <div class="line"></div>
+                        <a href="" class="shop"><span class="ico3"></span>进入店铺</a>
+                    </div>
+                    <div class="hot">
+                        <div class="head">热销产品</div>
+                        <div class="hot-pro">
+                            <div class="img"></div>
+                            <p class="title">因特尔酷睿i9高速度处理器限时…</p>
+                            <p class="price">￥888</p>
+                        </div>
+                        <div class="hot-pro">
+                            <div class="img"></div>
+                            <p class="title">因特尔酷睿i9高速度处理器限时…</p>
+                            <p class="price">￥888</p>
+                        </div>
+                        <div class="hot-pro">
+                            <div class="img"></div>
+                            <p class="title">因特尔酷睿i9高速度处理器限时…</p>
+                            <p class="price">￥888</p>
+                        </div>
+                        <div class="hot-pro">
+                            <div class="img"></div>
+                            <p class="title">因特尔酷睿i9高速度处理器限时…</p>
+                            <p class="price">￥888</p>
+                        </div>
+                        <div class="hot-pro">
+                            <div class="img"></div>
+                            <p class="title">因特尔酷睿i9高速度处理器限时…</p>
+                            <p class="price">￥888</p>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="head-box">
+                        <div class="head">产品详情</div>
+                    </div>
+                    <div class="ta-head">商品参数</div>
+                    <div class="table">
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                        <div class="t-l">类型</div>
+                        <div class="t-r">摇臂钻床</div>
+                    </div>
+                    <div class="pic">商品图片</div>
+                    <div class="img-box">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                        <img src="images/1.png" alt="">
+                    </div>
+                    <div class="bottom">
+                        <span class="line"></span>
+                        <span class="bom-word">已经到底了</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="safe auto word">
+                <span class="head">行业分类首字母：</span>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/A">A</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/B">B</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/C">C</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/D">D</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/E">E</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/F">F</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/G">G</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/H">H</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/I">I</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/J">J</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/K">K</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/L">L</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/M">M</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/N">N</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/O">O</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/P">P</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/Q">Q</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/R">R</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/S">S</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/T">T</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/U">U</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/V">V</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/W">W</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/X">X</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/Y">Y</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/Z">Z</a>
+                <a href="http://www.cailiao.com/frontend/search/alias/name/0-9">0-9</a>
+            </div>
+
+        </div>
+        <div class="footer">
+            <p class="row11">
+                <a href="http://www.cailiao.com//about/company">中国材料网简介</a>
+                <a href="http://www.cailiao.com//about/terms">服务条款</a>
+                <a href="http://www.cailiao.com//about/statement">隐私声明</a>
+                <a href="http://www.cailiao.com//about/account">汇款账号</a>
+                <a href="http://www.cailiao.com//about/product">产品服务</a>
+                <a href="http://www.cailiao.com//about/job">大钻招聘</a>
+                <a href="http://www.cailiao.com//about/help">帮助中心</a>
+                <a href="http://www.cailiao.com//about/contact">联系我们</a>
+            </p>
+            <p class="row22">英文网址： www.cailiao.com 版权所有 中国材料网</p>
+            <p class="row33">Copyright 2009-2019 杭州大钻网络科技有限公司 All Rights Reserved</p>
+            <p class="row44">浙ICP备13034685号 增值电信业务经营许可证：浙B2-20190210</p>
+            <p class="row55">浙公网安备 33010602000211号</p>
+        </div>
+    </div>
+    <div class="mark">
+        <div class="content">
+            <div class="title">发送询价单</div>
+            <div class="line"></div>
+            <form method="post" action>
+                <div class="f-row">
+                    <span class="forward">您的姓名：</span>
+                    <span class="input">
+                        <input placeholder="请输入您的姓名" type="text">
+                    </span>
+                </div>
+                <div class="f-row">
+                    <span class="forward">联系电话：</span>
+                    <span class="input">
+                        <input placeholder="请输入联系电话" type="text">
+                    </span>
+                </div>
+                <div class="f-row">
+                    <span class="forward">采购留言：</span>
+                    <span class="input">
+                        <textarea placeholder="请输入留言内容" cols="20" rows="5"></textarea>
+                    </span>
+                </div>
+                <div class="submit">立即询价</div>
+                <div class="shut">x</div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="jquery-1.8.3.js"></script>
+<script>
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+    var big = document.getElementById("big")
+    var box = document.getElementById("box")
+    var x = 0;
+    var length = $("#ul li").length;
+    // 默认显示
+    $("#box img:eq(" + x + ")").show();
+    $("#ul li:eq(" + x + ")").css("border", "1px solid black");
+    $("#view img:eq(" + x + ")").show();
+
+    $("#ul li").mouseenter(function () {
+
+        $("#ul li:eq(" + x + ")").css("border", "none");
+        $("#box img:eq(" + x + ")").hide();
+        $("#view img:eq(" + x + ")").hide();
+        x = $(this).index();
+        $("#ul li:eq(" + x + ")").css("border", "1px solid black");
+        $("#box img:eq(" + x + ")").show();
+        $("#view img:eq(" + x + ")").show();
+    })
+
+    $('#right').click(function () {
+        $("#ul li:eq(" + x + ")").css("border", "none");
+        $("#box img:eq(" + x + ")").hide();
+        $("#view img:eq(" + x + ")").hide();
+        x++;
+        if (x > length - 1) {
+            x = 0
+        }
+        $("#box img:eq(" + x + ")").show();
+        $("#view img:eq(" + x + ")").show();
+        $("#ul li:eq(" + x + ")").css("border", "1px solid black");
+
+    })
+
+    $('#left').click(function () {
+        $("#ul li:eq(" + x + ")").css("border", "none");
+        $("#box img:eq(" + x + ")").hide();
+        $("#view img:eq(" + x + ")").hide();
+        x--;
+        if (x <0) {
+            x = length-1;
+        }
+        $("#box img:eq(" + x + ")").show();
+        $("#view img:eq(" + x + ")").show();
+        $("#ul li:eq(" + x + ")").css("border", "1px solid black");
+
+    })
+    // 放大镜
+    $('#box').mousemove(function (e) {
+        var left = e.clientX - big.offsetLeft + scrollLeft;
+        var top = e.clientY - big.offsetTop + scrollTop;
+
+        if (left < 50) {
+            left = 50;
+        }
+        if (left > 390) {
+            left = 390;
+        }
+        if (top < 50) {
+            top = 50;
+        }
+        if (top > 350) {
+            top = 350;
+        }
+        $('#view img').css("left", -left * 2 + 100 + 'px')
+        $('#view img').css("top", -top * 2 + 100 + 'px')
+    })
+    $('#box').mouseover(function () {
+        $('#view').css("display", "block")
+    })
+    $('#box').mouseout(function () {
+        $('#view').css("display", "none")
+    })
+    // 遮罩层
+    $('.ask').click(function () {
+        $(".mark").css("display", "block");
+    })
+    $('.shut').click(function () {
+        $(".mark").css("display", "none");
+    })
+
+    // 头部导航
+    var z=0;
+    $(".addbar .block:eq("+z+")").css({color:'#1FB8FF',backgroundColor:"rgba(211,241,255,1)"});
+    $(".addbar .block").click(function(){
+        $(".addbar .block:eq("+z+")").css({color:'#ffffff',backgroundColor:"rgba(72,194,251,1)"});
+        z=$(this).index();
+        $(".addbar .block:eq("+z+")").css({color:'#1FB8FF',backgroundColor:"rgba(211,241,255,1)"});
+    })
+</script>
+<script>
+     
+      
+      </script>
+</html>

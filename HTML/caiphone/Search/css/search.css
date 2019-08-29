@@ -1,0 +1,212 @@
+.head {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    background: #ff9c01;
+    background-image: url(../images/yx1.png);
+    background-position: 95% 15px;
+    background-repeat: no-repeat;
+    background-size: 21px 18px;
+}
+.s-flex {
+    width: 100%;
+    margin-top: 12px;
+    background: #ffffff;
+  }
+  .ipt-box {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .ipt-box .ico {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    margin-top: -12px;
+  }
+  .ipt-box .ipt {
+    width: 70%;
+    height: 42px;
+    outline: none;
+    text-indent: 3em;
+    background: #ffffff;
+    border: 1px solid #ff9c01;
+  }
+  .ipt-box .button {
+    display: inline-block;
+    width: 20%;
+    height: 42px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 42px;
+    color: #ffffff;
+    background: #ff9c01;
+    border: 1px solid #ff9c01;
+  }
+  /* 热词 */
+  .re-word {
+    margin-top: 7px;
+    background: #ffffff;
+  }
+  .hot-word {
+    padding-left: 10px;
+    padding-top: 16px;
+    color: #4f4f4f;
+    font-size: 15px;
+  }
+  .hot-word img {
+    width: 19px;
+    height: 23px;
+    position: relative;
+    top: -2px;
+  }
+  .hotwords {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .search-word {
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin: 10px;
+    background: #ffb034;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+/* 搜索商品 */
+.goods{
+  background: #fff;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.list{
+  display: block;
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 30px;
+}
+.list .right{
+  width: 60%;
+  height: 100px;
+}
+.right .proname{
+  color: #3F3F3F;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.right .shopname{
+  color: #3F3F3F;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.right .row{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.row .price{
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF9C01;
+}
+.row .ask{
+  display: block;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background:#FF9C01;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border-radius:10px;
+}
+.list img{
+  width: 33.8%;
+  height: 100px;
+}
+/* 分页 */
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #5e5e5e;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.pad-10 {
+  padding: 10px 10px 11px 11px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+.pad-12 {
+  padding: 12px 3px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+.pad-no {
+  background: #f5f5f5;
+  padding: 12px 3px;
+  font-size: 14px;
+}
+/* copyright */
+.copyfoot {
+    width: 100%;
+    height: 130px;
+    padding: 35px 0;
+    background: #bfbfbf;
+    color: #646464;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.copyfoot p {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.block {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    color: #646464;
+    font-size: 12px;
+}

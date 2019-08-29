@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>大钻模板2</title>
+  <script type="text/javascript">
+    var _global = {
+      is_load: 0,
+      shop_id: 601,
+      cailiao_id: 458787,//470444新闻
+    };
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+
+<body>
+  <div id="app"></div>
+</body>
+<script>
+  $(document).ready(function () {
+    var url = "http://" + window.location.host + "/";
+    var theme = 1;
+    $.ajax({
+      url: "http://vip.dazuan.com/index.php/api/index/get_shop",
+      type: "POST",
+      dataType: 'json',
+      data: {
+        'url': url
+      },
+      success: function (data) {
+        if (data.status == 1) {
+          $(document).attr("title", data.data.shop_name);
+          $("title").html(data.data.shop_name);
+          window._global.shop_id = data.data.shop_id
+          window._global.cailiao_id = data.data.cailiao_id
+          if (/Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)) { //手机端跳转
+            theme = data.data.theme_h5
+            var src = "/h5/static" + theme;
+            // css
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", src + "/css/app.css");
+            var heads = document.getElementsByTagName("head");
+            heads[0].appendChild(link);
+
+          } else { //PC端跳转
+            theme = data.data.theme_pc
+            var src = "/pc/static" + theme;
+            // css
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", src + "/css/app.css");
+            var heads = document.getElementsByTagName("head");
+            heads[0].appendChild(link);
+          }
+          loadJs(src + "/js/manifest.js");
+          loadJs(src + "/js/vendor.js");
+          loadJs(src + "/js/app.js");
+        } else {
+          // alert("参数错误，无法打开网站")
+        }
+      },
+    })
+
+  });
+
+  function loadJs(file) {
+    var head = $("head").remove("script[role='reload']");
+    $("<scri" + "pt>" + "</scr" + "ipt>").attr({
+      role: 'reload',
+      src: file,
+      type: 'text/javascript'
+    }).appendTo(head);
+  }
+
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tOopWG2Z0GvoP2exXhOsp74HCko5UKdA"></script>
+</html>

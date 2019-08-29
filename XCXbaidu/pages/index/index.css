@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+}
+/* ----------外部容器--------- */
+.container {
+    width: 100%;
+    height: 100%;
+}
+.bg-img {
+    width: 100%;
+    height: 411rpx;
+    background-image: url("../../images/bg.png");
+    background-size: 100%;
+}
+/* ----------头部--------- */
+.head-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25rpx 20rpx;
+}
+.logo {
+    width: 172rpx;
+    height: 61rpx;
+}
+.head-input {
+    width: 518rpx;
+    height: 59rpx;
+    background-color: #fff;
+    border-radius: 27rpx;
+    line-height: 59rpx;
+}
+.head-icon {
+    margin-left: 28rpx;
+    width: 25rpx;
+    height: 25rpx;
+}
+.head-text {
+    margin-left: 10rpx;
+    font-size: 24rpx;
+    color: #a3a3a3;
+}
+/* ----------轮播--------- */
+.swiper {
+    width: 100%;
+    height: 289rpx;
+}
+.swiper-item {
+    width: 100%;
+    height: 289rpx;
+}
+.slide-image {
+    display: block;
+    width: 710rpx;
+    height: 289rpx;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slide-image image {
+    width: 100%;
+    height: 100%;
+}
+/* ----------跳转--------- */
+.navgator {
+    width: 100%;
+    padding-top: 35rpx;
+    padding-bottom: 35rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.tap-kinds {
+    width: 115rpx;
+    display: flex;
+    flex-direction: column;
+}
+.icon-kinds {
+    width: 111rpx;
+    height: 115rpx;
+}
+.text-kinds {
+    font-size: 28rpx;
+    color: #606060;
+}
+/* ----------热门楼层--------- */
+.empty {
+    width: 100%;
+    height: 10rpx;
+    background: #f6f6f6;
+}
+.floor {
+    width: 100%;
+    height: 88rpx;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.signal-left {
+    width: 358rpx;
+    display: flex;
+    flex-direction: row;
+}
+.signal-img {
+    display: block;
+    width: 130rpx;
+    height: 32rpx;
+}
+.signal-text {
+    margin-left: 20rpx;
+    font-size: 24rpx;
+    color: #3f3f3f;
+}
+.signal-more {
+    width: 100rpx;
+    font-size: 24rpx;
+    color: #3f3f3f;
+    text-align: right;
+}
+/* ----------热门品类--------- */
+.hot-kinds-box {
+    width: 100%;
+    padding: 0 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.kinds-first {
+    width: 49%;
+    padding: 25rpx 27rpx 18rpx;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 3rpx;
+}
+.kinds-title {
+    font-size: 32rpx;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+.kinds-desc {
+    font-size: 20rpx;
+    color: #3f3f3f;
+}
+.kinds-goods {
+    margin-top: 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.goods-container {
+    width: 130rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.goodsimg {
+    display: block;
+    width: 120rpx;
+    height: 82rpx;
+}
+.goodsname {
+    width: 82rpx;
+    height: 32rpx;
+    padding: 0 10rpx;
+    margin-top: 10rpx;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 32rpx;
+}
+.small-goods-box {
+    width: 32%;
+    padding: 25rpx 0 15rpx;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 3rpx;
+    overflow: hidden;
+    margin: 10rpx 0;
+}
+.small-title {
+    text-align: center;
+    color: #3f3f3f;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+.imgbox {
+    padding: 10rpx;
+    width: 176rpx;
+    height: 104rpx;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.imgbox image {
+    width: 100%;
+    height: 100%;
+}
+.p-b-30 {
+    padding-bottom: 30rpx;
+}
+/* ----------热门行业--------- */
+.hot-career {
+    width: 100%;
+    padding: 0 20rpx 30rpx;
+    overflow: hidden;
+}
+.career-row1 {
+    width: 100%;
+    height: 238rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.row1-left {
+    width: 470rpx;
+    height: 238rpx;
+    padding: 34rpx 25rpx;
+    background-image: url("../../images/fenlei3.png");
+    background-size: 100%;
+}
+.same-font {
+    font-size: 32rpx;
+    font-weight: bold;
+}
+.color1 {
+    color: #266ff4;
+}
+.color2 {
+    text-align: center;
+    color: #3f3f3f;
+}
+.same-desc {
+    font-size: 20rpx;
+    color: #3f3f3f;
+    margin-top: 5rpx;
+}
+.know-box {
+    width: 71rpx;
+    height: 22rpx;
+    font-size: 16rpx;
+    color: #ffffff;
+    text-align: center;
+    line-height: 22rpx;
+    margin-top: 55rpx;
+    background: #5489ed;
+}
+.row1-right {
+    width: 231rpx;
+    height: 238rpx;
+    padding: 34rpx 10rpx;
+    background-image: url("../../images/fenlei1.png");
+    background-size: 100%;
+}
+.career-row2 {
+    width: 100%;
+    height: 165rpx;
+    margin-top: 10rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.row2-part {
+    width: 350rpx;
+    height: 165rpx;
+    padding: 25rpx 25rpx;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 3rpx;
+    background-size: 100%;
+}
+.row2-left {
+    background-image: url("../../images/fenlei4.png");
+}
+.row2-right {
+    background-image: url("../../images/fenlei2.png");
+}
+.same-color {
+    color: #3f3f3f;
+    font-size: 28rpx;
+}
+.know-more {
+    width: 87rpx;
+    height: 32rpx;
+    text-align: center;
+    line-height: 32rpx;
+    color: #ffffff;
+    font-size: 20rpx;
+    margin-top: 25rpx;
+    background: rgba(0, 0, 0, 0.28);
+}
+/* ----------最新产品--------- */
+.newgoods-box {
+    width: 100%;
+    padding: 0 20rpx 40rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+}
+.newgoods {
+    width: 49%;
+    margin: 7rpx 0;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0.03rpx;
+}
+.newgoods .img {
+    width: 100%;
+    height: 287rpx;
+    overflow: hidden;
+}
+.img image {
+    width: 100%;
+    height: 100%;
+}
+.newgoods .name {
+    font-size: 28rpx;
+    color: #3f3f3f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 23rpx;
+    padding: 0 20rpx;
+    font-weight: bold;
+}
+.newgoods .price {
+    font-size: 28rpx;
+    color: #ff9c01;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 16rpx;
+    padding: 0 20rpx 20rpx;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.newgoods .more {
+    width: 41rpx;
+    height: 9rpx;
+}
+/* ----------copyright--------- */
+.copyright{
+    padding: 40rpx 0;
+}
+.col{
+    text-align: center;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+    color: #3F3F3F;
+}

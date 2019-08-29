@@ -1,0 +1,157 @@
+<!-- index.swan -->
+<view class="container">
+	<view class="bg-img">
+		<!-------------- 头部 -------------->
+		<view class="head-search">
+			<image class="logo" src="../../images/logo.png"></image>
+			<view bindtap="tosearch" class="head-input">
+				<image class="head-icon" src="../../images/yx8.png"></image>
+				<text class="head-text">请输入关键词搜索</text>
+			</view>
+		</view>
+		<!-------------- 轮播 -------------->
+		<swiper class='swiper' circular='{{true}}' indicator-dots="{{true}}" indicator-color="#ffffff"
+			indicator-active-color='#000000' autoplay='{{true}}'>
+			<block>
+				<swiper-item class="swiper-item">
+					<image src="../../images/banner.png" class="slide-image" />
+				</swiper-item>
+			</block>
+			<block>
+				<swiper-item class="swiper-item">
+					<image src="../../images/banner.png" class="slide-image" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-------------- 跳转 -------------->
+	<view class="navgator">
+		<view class="tap-kinds" bind:tap="kinds">
+			<image class="icon-kinds" src="../../images/yx1.png"></image>
+			<text class="text-kinds">商品分类</text>
+		</view>
+		<view class="tap-kinds" bindtap="vip">
+			<image class="icon-kinds" src="../../images/yx2.png"></image>
+			<text class="text-kinds">超级会员</text>
+		</view>
+		<view class="tap-kinds" bindtap="about">
+			<image class="icon-kinds" src="../../images/yx3.png"></image>
+			<text class="text-kinds">关于我们</text>
+		</view>
+		<view class="tap-kinds" bindtap="contact">
+			<image class="icon-kinds" src="../../images/yx4.png"></image>
+			<text class="text-kinds">联系我们</text>
+		</view>
+	</view>
+	<!-------------- 热门品类楼层 -------------->
+	<view class="empty"></view>
+	<view class="floor">
+		<view class="signal-left">
+			<image class="signal-img" src="../../images/yxfloor1.png"></image>
+			<text class="signal-text">| 优质产品任你挑选</text>
+		</view>
+		<view class="signal-more" bindtap="kinds">更多></view>
+	</view>
+	<!-------------- 热门品类 -------------->
+	<view class="hot-kinds-box">
+		<view class="kinds-first" s-for="[1,2]">
+			<view class="kinds-title">电工电气</view>
+			<view class="kinds-desc">好货新料 马上购买</view>
+			<view class="kinds-goods">
+				<view class="goods-container">
+					<image class="goodsimg" src="../../images/a.jpg"></image>
+					<view class="goodsname">电焊</view>
+				</view>
+				<view class="goods-container">
+					<image class="goodsimg" src="../../images/a.jpg"></image>
+					<view class="goodsname">传感器</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="kinds-first">
+			<view class="kinds-title">照明工业</view>
+			<view class="kinds-desc">精选商品 一键直达</view>
+			<view class="kinds-goods">
+				<view class="goods-container">
+					<image class="goodsimg" src="../../images/a.jpg"></image>
+					<view class="goodsname">白炽灯</view>
+				</view>
+				<view class="goods-container">
+					<image class="goodsimg" src="../../images/a.jpg"></image>
+					<view class="goodsname">冷光源</view>
+				</view>
+			</view>
+		</view> -->
+	</view>
+	<view class="hot-kinds-box p-b-30">
+		<view class="small-goods-box" s-for="[1,2,3,4,5,6]">
+			<view class="small-title">电子元器件</view>
+			<view class="imgbox">
+				<image src="../../images/a.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<!-------------- 热门行业楼层 -------------->
+	<view class="empty"></view>
+	<view class="floor">
+		<view class="signal-left">
+			<image class="signal-img" src="../../images/yxfloor2.png"></image>
+			<text class="signal-text">| 优质产品任你挑选</text>
+		</view>
+		<view class="signal-more" bindtap="kinds">更多></view>
+	</view>
+	<!-------------- 热门行业 -------------->
+	<view class="hot-career">
+		<view class="career-row1">
+			<view class="row1-left">
+				<view class="same-font color1">交通运输</view>
+				<view class="same-desc">解锁运输行业新世界</view>
+				<view class="know-box">了解更多</view>
+			</view>
+			<view class="row1-right">
+				<view class="same-font color2">工程机械</view>
+				<view class="same-desc">专业创品质 诚信铸未来</view>
+			</view>
+		</view>
+		<view class="career-row2">
+			<view class="row2-part row2-left">
+				<view class="same-color">节能环保</view>
+				<view class="same-desc">精益求精 开拓创新</view>
+				<view class="know-more">了解更多</view>
+			</view>
+			<view class="row2-part row2-right">
+				<view class="same-color">化学化工</view>
+				<view class="same-desc">厂家直销 品质服务</view>
+				<view class="know-more">了解更多</view>
+			</view>
+		</view>
+	</view>
+	<!-------------- 最新产品楼层 -------------->
+	<view class="empty"></view>
+	<view class="floor">
+		<view class="signal-left">
+			<image class="signal-img" src="../../images/yxfloor3.png"></image>
+			<text class="signal-text">| 优质产品任你挑选</text>
+		</view>
+		<view class="signal-more" bindtap="kinds">更多></view>
+	</view>
+    <!-------------- 最新产品 -------------->
+    <view class="newgoods-box">
+        <navigator class="newgoods" url="/pages/detail/detail?id={{item.id}}" s-for="[1,2,3,4,5,6]">
+            <view class="img">
+                <image src="../../images/a.jpg"></image>
+            </view>
+            <view class="name">深圳智能温湿度探测报警警器厂家</view>
+            <view class="price">
+               <view> ¥ 4000</view>
+                <image class="more" src="../../images/yx11.png"></image>
+            </view>
+        </navigator>
+    </view>
+    <!-------------- copyright -------------->                
+    <view class="copyright">
+        <view class="col">www.cailiao.com 版权所有 中国材料网</view>
+        <view class="col">Copyright 2009-2019 杭州大钻网络科技有限公司</view>
+        <view class="col">浙ICP备13034685号</view>
+    </view>
+</view>

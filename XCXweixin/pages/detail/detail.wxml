@@ -1,0 +1,77 @@
+<view class="goods-message">
+	<text>产品信息</text>
+</view>
+<view class="bg"></view>
+<!-- 轮播 -->
+<swiper class='swiper' circular='{{true}}' indicator-dots="{{true}}" indicator-color="#ffffff" indicator-active-color='#000000'>
+	<block s-for="info.shop_item_img_list">
+		<swiper-item>
+			<image src="{{item.url}}" class="slide-image" />
+		</swiper-item>
+	</block>
+</swiper>
+<!-- 商品信息 -->
+<view class="goods-detail-p1">
+	<view class="goods-price">￥{{info.shop_item_info.price}}</view>
+	<view class="goods-title">{{info.shop_item_info.title}}</view>
+</view>
+<view class="goods-detail-p2">
+	<view class="goods-shopname">商家：{{info.shop_item_info.shop_name}}</view>
+	<view class="goods-tags">产品类型：{{info.shop_item_info.tags}}</view>
+</view>
+<view class="goods-detail-p3">
+	<view class="goods-init">
+		<view>起订量：</view>
+		<view>≥1套</view>
+	</view>
+	<view class="goods-amount">
+		<view>总供应：</view>
+		<view>{{info.shop_item_info.amount}}套</view>
+	</view>
+	<view class="goods-address">
+		<view>所在地：</view>
+		<view>{{info.shop.address}}</view>
+	</view>
+</view>
+<view class="bg"></view>
+<!-- 商品参数 -->
+<view class="goods-content">
+	<view class="{{flag1==true?'blue':''}}" bindtap="selected1">
+		<text class="{{flag1==true?'border':''}}">商品详情</text>
+	</view>
+	<view class="{{flag2==true?'blue':''}}" bindtap="selected2">
+		<text class="{{flag2==true?'border':''}}">商品参数</text>
+	</view>
+</view>
+<!-- 详情 -->
+<view s-if="flag1">
+	<view class="right-detail">
+		<view class="line"></view>
+		<view class="head-title">商品详情</view>
+		<view class="line"></view>
+	</view>
+	<view class="pro-detail">
+		<rich-text nodes="{{html}}"></rich-text>
+	</view>
+</view>
+<!-- 参数 -->
+<view s-if="flag2">
+	<view class="right-detail">
+		<view class="line"></view>
+		<view class="head-title">参数详情</view>
+		<view class="line"></view>
+	</view>
+	<view class="table-box">
+		<view class="detail-table" s-for="info.shop_item_attr_list">
+			<view class="table-name">{{item.name}}</view>
+			<view class="table-val">{{item.val}}</view>
+		</view>
+	</view>
+</view>
+<!-- copyright -->
+<view class="footer">
+	<text> {{info.shop.name}}</text>
+	<text>{{info.shop.address}}</text>
+	<text>技术支持：中国材料网</text>
+	<text>友情链接：大钻网络</text>
+</view>

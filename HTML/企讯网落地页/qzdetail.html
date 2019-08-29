@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>qx详情页</title>
+    <link rel="stylesheet" href="css/qxdetail.css">
+    <script src="js/jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="addbar-box">
+        <ul class="safe auto addbar">
+            <a href="###" class="block">企业首页</a>
+            <a href="###" class="block m-l-55">产品中心</a>
+            <a href="###" class="block m-l-55">企业介绍</a>
+            <a href="###" class="block m-l-55">联系方式</a>
+            <a href="###" class="block m-l-55">代理加盟</a>
+        </ul>
+    </div>
+    <!-- 新增 -->
+    <div style="margin-top:50px" class="col-top-box safe auto clearfix">
+        <div class="col-left" id="big">
+            <div class="banner-box" id="box">
+                <img src="images/1.png" alt="">
+                <img src="images/2.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/1.png" alt="">
+                <img src="images/2.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/3.png" alt="">
+            </div>
+            <img class="search" onclick="pickup()" src="images/yx1.png" alt="">
+            <div class="banner-view" id="view">
+                <img src="images/1.png" alt="">
+                <img src="images/2.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/1.png" alt="">
+                <img src="images/2.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/3.png" alt="">
+            </div>
+            <div class="banner-li" id="ul-box">
+                <button id="btn-left" onclick="left_btn()"></button>
+                <button id="btn-right" onclick="right_btn()"></button>
+                <div class="small-imgs">
+                    <ul id="ul">
+                        <li class="li-border on"><img src="images/1.png" alt=""></li>
+                        <li class="li-border"><img src="images/2.png" alt=""></li>
+                        <li class="li-border"><img src="images/3.png" alt=""></li>
+                        <li class="li-border"><img src="images/1.png" alt=""></li>
+                        <li class="li-border"><img src="images/2.png" alt=""></li>
+                        <li class="li-border"><img src="images/3.png" alt=""></li>
+                        <li class="li-border"><img src="images/3.png" alt=""></li>
+                        <li class="li-border"><img src="images/3.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-medium">
+            <div class="goodsname">商品名称标题1商品名称标题1商品名称标题1商品名称标题1</div>
+            <div class="col-m-row1">
+                <div class="row1-content">现货</div>
+            </div>
+            <div class="col-m-row2">
+                <div class="clearfix" style="height: 75px;">
+                    <div class="row2-left">
+                        <span class="row2-key">价格</span>
+                        <span class="row2-val">￥<i>2000</i></span>
+                    </div>
+                    <div class="stright"></div>
+                    <div class="row2-left">
+                        <span class="row2-key">产品数量</span>
+                        <span class="row2-val"><i>2000</i> 个</span>
+                    </div>
+                </div>
+                <div class="de-table">
+                    <div class="table-left">订购信息</div>
+                    <div class="table-right">
+                        <div class="table-r-col1">
+                            <div class="col1-head">起订量</div>
+                            <div class="col1-head">>=5</div>
+                            <div class="col1-head">>=5</div>
+                            <div class="col1-head">>=5</div>
+                            <div class="col1-head">>=5</div>
+                            <div class="col1-head">>=5</div>
+                        </div>
+                        <div class="table-r-col1">
+                                <div class="col1-head">价&#x3000;格</div>
+                                <div class="col1-head">￥238.00</div>
+                                <div class="col1-head">￥238.00</div>
+                                <div class="col1-head">￥238.00</div>
+                                <div class="col1-head">￥238.00</div>
+                                <div class="col1-head">￥238.00</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-m-row3">优质产品，欢迎选购！</div>
+            <div class="col-m-row4 clearfix">
+                <div class="row4-key">企业</div>
+                <div class="row4-val">永嘉县江北瓯达网络科技服务中心</div>
+            </div>
+            
+            <div class="col-m-row4 clearfix">
+                <div class="row4-key">联系信息</div>
+                <div class="row4-val">
+                    <span class="row4-phonenumber">13324168110 / 18868178344</span>
+                    <span class="row4-linkman">&#x3000;张志客</span>
+                </div>
+            </div>
+
+            <div class="col-m-row4 clearfix addborder">
+                <div class="row4-key">所在区域</div>
+                <div class="row4-val">浙江省温州市永嘉县</div>
+            </div>
+            <div class="col-m-row6 clearfix">
+                <a class="row6-btn1 btn-block" href="###">立即询价</a>
+                <a class="row6-btn2 btn-block" href="###">进入商铺</a>
+                <div class="row6-btn3 btn-block">
+                    手机查看
+                    <div class="skan-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                </div>
+                <a class="row6-btn4 btn-block" href="###">进入官网</a>
+            </div>
+        </div>
+        <div class="col-right">
+            <div class="col-r-row1">
+                <span class="r-line"></span>
+                <span class="r-title">最新商品</span>
+                <span class="r-line"></span>
+            </div>
+            <div class="col-r-row2">
+                <a class="row2-item" href="###">
+                    <div class="img-box">
+                        <img src="images/1.png" alt="">
+                    </div>
+                    <div class="price">￥6980</div>
+                </a>
+                <a class="row2-item" href="###">
+                    <div class="img-box">
+                        <img src="images/1.png" alt="">
+                    </div>
+                    <div class="price">￥6980</div>
+                </a>
+                <a class="row2-item" href="###">
+                    <div class="img-box">
+                        <img src="images/1.png" alt="">
+                    </div>
+                    <div class="price">￥6980</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--商家推荐  -->
+    <div class="safe auto">
+        <div class="boss-title">商家推荐</div>
+        <div class="boss-goods-box">
+            <button id="boss-left"></button>
+            <button id="boss-right"></button>
+            <div class="products-box">
+                <div class="boss-goods">
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                    <a class="boss-item" href="###">
+                        <div class="img-box">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="boss-name">温州百度爱采购加盟商温州百度爱采购加盟商</div>
+                        <div class="boss-price">￥6980</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 详细信息 -->
+    <div class="col-detail safe auto clearfix">
+        <div class="detail-left">
+            <div class="shop-level">超级会员</div>
+            <div class="shop-name">永嘉县江北瓯达网络科技服务中心</div>
+            <div class="shop-object">
+                <div class="object-top">
+                    <span class="shop-key">企业服务：</span>
+                    <span class="shop-val"></span>
+                </div>
+                <div class="object-row">
+                    <span class="object-key">联系人：</span>
+                    <span class="object-val">张**</span>
+                </div>
+                <div class="object-row m-t-15">
+                    <span class="object-key">手机号码：</span>
+                    <span class="object-val">13324168110</span>
+                </div>
+                <div class="object-row m-t-15">
+                    <span class="object-key">手机号码：</span>
+                    <span class="object-val">13324168110</span>
+                </div>
+                <div class="object-row m-t-15">
+                    <span class="object-key">电话号码：</span>
+                    <span class="object-val">13324168110</span>
+                </div>
+                <div class="object-row m-t-15">
+                    <span class="object-key">传真：</span>
+                    <span class="object-val">13324168110</span>
+                </div>
+                <div class="object-row m-t-15">
+                    <span class="object-key">主营产品：</span>
+                    <span class="object-val">计制作、软件开发应用、网络技术咨询服务于泵、阀门、阀门配件。</span>
+                </div>
+            </div>
+            <a class="toshop" href="###">进入店铺</a>
+            <!------------------------分类----------------------->
+            <div class="kinds">产品分类</div>
+            <div class="kinds-box">
+                <!-- 头部 -->
+                <div class="kinds-li">
+                    <span class="li-add">+</span>
+                    <span class="li-des">全部产品</span>
+                </div>
+                <!-- 列表 -->
+                <div class="kinds-list">
+                    <!-- 类目1 -->
+                    <div class="list-container">
+                        <div class="kinds-li-1">
+                            <span class="li-add-1">+</span>
+                            <span class="li-des">笔记本电池连接器</span>
+                        </div>
+                        <div class="kinds-li-detail">
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                        </div>
+                    </div>
+                    <!-- 类目2 -->
+                    <div class="list-container">
+                        <div class="kinds-li-1">
+                            <span class="li-add-1">+</span>
+                            <span class="li-des">笔记本电池连接器</span>
+                        </div>
+                        <div class="kinds-li-detail">
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                            <a href="" class="detail-li">笔记本电池</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-right">
+            <div class="right-nav">
+                <div class="nav-content">详细信息</div>
+            </div>
+            <div class="detail-content clearfix">
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+                <div class="table-row">
+                    <span class="table-key">品牌</span>
+                    <span class="table-val">百度爱采购</span>
+                </div>
+            </div>
+            <!-- 热门推荐 -->
+            <div class="hot-name">热门推荐</div>
+            <div class="col-hot clearfix">
+                <a href="###" class="hot-item">
+                    <div class="img-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                    <div class="hot-title">温州百度爱采购加盟商家爱采购加盟商...</div>
+                    <div class="hot-price">￥6980</div>
+                </a>
+                <a href="###" class="hot-item">
+                    <div class="img-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                    <div class="hot-title">温州百度爱采购加盟商家爱采购加盟商...</div>
+                    <div class="hot-price">￥6980</div>
+                </a>
+                <a href="###" class="hot-item">
+                    <div class="img-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                    <div class="hot-title">温州百度爱采购加盟商家爱采购加盟商...</div>
+                    <div class="hot-price">￥6980</div>
+                </a>
+                <a href="###" class="hot-item">
+                    <div class="img-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                    <div class="hot-title">温州百度爱采购加盟商家爱采购加盟商...</div>
+                    <div class="hot-price">￥6980</div>
+                </a>
+                <a href="###" class="hot-item">
+                    <div class="img-box">
+                        <img src="images/3.png" alt="">
+                    </div>
+                    <div class="hot-title">温州百度爱采购加盟商家爱采购加盟商...</div>
+                    <div class="hot-price">￥6980</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-foot">
+        <div class="safe auto word">
+            <span class="head">行业分类首字母：</span>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/A">A</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/B">B</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/C">C</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/D">D</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/E">E</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/F">F</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/G">G</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/H">H</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/I">I</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/J">J</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/K">K</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/L">L</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/M">M</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/N">N</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/O">O</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/P">P</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/Q">Q</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/R">R</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/S">S</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/T">T</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/U">U</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/V">V</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/W">W</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/X">X</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/Y">Y</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/Z">Z</a>
+            <a href="http://www.cailiao.com/frontend/search/alias/name/0-9">0-9</a>
+        </div>
+        <div class="footer">
+            <p class="row1">
+                <a href="http://www.cailiao.com//about/company">中国材料网简介</a>
+                <a href="http://www.cailiao.com//about/terms">服务条款</a>
+                <a href="http://www.cailiao.com//about/statement">隐私声明</a>
+                <a href="http://www.cailiao.com//about/account">汇款账号</a>
+                <a href="http://www.cailiao.com//about/product">产品服务</a>
+                <a href="http://www.cailiao.com//about/job">大钻招聘</a>
+                <a href="http://www.cailiao.com//about/help">帮助中心</a>
+                <a href="http://www.cailiao.com//about/contact">联系我们</a>
+            </p>
+            <p class="row2">英文网址： www.cailiao.com 版权所有 <a class="cai" href="http://www.cailiao.com">中国材料网</a></p>
+            <p class="row3">Copyright 2009-2019 杭州大钻网络科技有限公司 All Rights Reserved</p>
+            <p class="row4">浙ICP备13034685号 增值电信业务经营许可证：浙B2-20190210</p>
+            <p class="row5">浙公网安备 33010602000211号</p>
+        </div>
+    </div>
+</body>
+<script>
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+    var big = document.getElementById("big")
+    var box = document.getElementById("box")
+    var x = 0;
+    var y = 0;
+    var length = $("#ul li").length;
+    // 默认显示
+    $("#box img:eq(" + x + ")").show();
+    $("#view img:eq(" + x + ")").show();
+    var width = length * 62
+    $("#ul").css("width", width + "px")
+
+    // 缩略图
+    $("#ul li").mouseenter(function () {
+        var i;
+        var l = $("#ul-box").find("#ul li").length;
+        $("#ul-box").find("#ul li").each(function (index) {
+            if ($(this).hasClass("on")) {
+                i = index;
+            }
+        });
+        $("#view img:eq(" + i + ")").hide();
+        i = $(this).index();
+        if (i > l - 1) {
+            i = 0;
+        }
+        $("#view img:eq(" + i + ")").show();
+        t = i;
+        Img(i);
+    })
+
+
+    /* 左按钮 */
+    function left_btn() {
+        var i;
+        var l = $("#ul-box").find("#ul li").length;
+        $("#ul-box").find("#ul li").each(function (index) {
+            if ($(this).hasClass("on")) {
+                i = index;
+            }
+        });
+        $("#view img:eq(" + i + ")").hide();
+        i--;
+        if (i < 0) {
+            i = l - 1;
+        }
+        $("#view img:eq(" + i + ")").show();
+        t = i;
+        Img(i)
+    };
+    /* 右按钮 */
+    function right_btn() {
+        var i;
+        var l = $("#ul-box").find("#ul li").length;
+        $("#ul-box").find("#ul li").each(function (index) {
+            if ($(this).hasClass("on")) {
+                i = index;
+            }
+        });
+        $("#view img:eq(" + i + ")").hide();
+        i++;
+        if (i > l - 1) {
+            i = 0;
+        }
+        $("#view img:eq(" + i + ")").show();
+        t = i;
+        Img(i);
+    };
+    /* 图片 */
+    function Img(i) {
+        var l = $("#ul-box").find("#ul li").length;
+        var l_mean;
+        if (l < 6) {
+            l_mean = 0;
+        } else {
+            l_mean = ((parseInt(l / 6) - 1) * 6) + (l % 6);
+        }
+        var w = 62;
+        $("#big").find("#box img").eq(i).fadeIn().siblings().hide();
+        $("#ul-box").find("#ul li").eq(i).addClass("on").siblings().removeClass("on");
+        var ml = i * w;
+        if (ml <= l_mean * w) {
+            $("#ul-box").find("#ul").stop().animate({
+                marginLeft: -ml + "px"
+            })
+        } else {
+            $("#ul-box").find("#ul").stop().animate({
+                marginLeft: -(l_mean * w) + "px"
+            })
+        }
+    }
+    // 放大镜
+    var flag = false;
+
+    function pickup() {
+        flag = !flag;
+        console.log(flag)
+    }
+
+    $('#box').mousemove(function (e) {
+        var left = e.clientX - big.offsetLeft + scrollLeft;
+        var top = e.clientY - big.offsetTop + scrollTop;
+        if (flag) {
+            if (left < 50) {
+                left = 50;
+            }
+            if (left > 350) {
+                left = 350;
+            }
+            if (top < 50) {
+                top = 50;
+            }
+            if (top > 350) {
+                top = 350;
+            }
+            $('#view img').css("left", -left * 2 + 100 + 'px')
+            $('#view img').css("top", -top * 2 + 100 + 'px')
+        }
+    })
+    $('#box').mouseover(function () {
+        if (flag) {
+            $('#view').css("display", "block")
+        }
+
+    }).mouseout(function () {
+        if (flag) {
+            $('#view').css("display", "none")
+        }
+    })
+    $("#boss-left").click(function () {
+        y -= 144;
+        if (y < 0) {
+            y = 0
+        }
+        $(".boss-goods").css({
+            "marginLeft": "-" + y + "px"
+        })
+    })
+    $("#boss-right").click(function () {
+        y += 144;
+        if (y >= 432) {
+            y = 432
+        }
+        $(".boss-goods").css({
+            "marginLeft": "-" + y + "px",
+            "transition": "all .3s ease-in"
+        })
+    })
+    var w = 0;
+    $(".kinds-list").hide();
+    $(".kinds-li-detail").hide();
+    $(".kinds-li").click(function () {
+        w++;
+        if (w % 2) {
+            $(".li-add").html("-");
+            $(".li-add-1").html("+");
+            $(".kinds-list").show();
+            $(".kinds-li-detail").hide();
+        } else {
+            $(".li-add").html("+");
+            $(".kinds-list").hide();
+        }
+
+    })
+    var number = 0;
+    $(".kinds-list .list-container").click(function () {
+        $(".kinds-list .list-container .kinds-li-detail").eq(number).hide();
+        $(".kinds-list .list-container .kinds-li-1 .li-add-1").eq(number).html("+");
+        number = $(this).index();
+        $(".kinds-list .list-container .kinds-li-detail").eq(number).show();
+        $(".kinds-list .list-container .kinds-li-1 .li-add-1").eq(number).html("-");
+    })
+</script>
+
+</html>

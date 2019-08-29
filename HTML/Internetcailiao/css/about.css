@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 解决移动端a标签点击时出现背景色 */
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+    font-family: "微软雅黑";
+    height: 100vh;
+}
+
+input,
+select,
+button {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+/* 头部1 */
+.yxhead1{
+    height: 1rem;
+    padding: 0 0.22rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.32rem;
+    font-weight: bold;
+    color: #1A1A1A;
+    background: #EDEDED;
+}
+.img-left{
+    width: 0.27rem;
+    height: 0.27rem;
+}
+.yxhead1 .imgbox{
+    width: 0.41rem;
+    height: 1rem;
+    /* background-image: url(../images/yx11.png);
+    background-position: 90% 50%;
+    background-size: 0.41rem 0.08rem;
+    background-repeat: no-repeat; */
+  }
+/* 标题 */
+.yxhead2{
+    overflow: hidden;
+}
+.yxhead2 .yxhead2-title{
+    font-size: 0.28rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-top: 0.67rem;
+}
+.yxhead2-para{
+    color: #666666;
+    font-size: 0.2rem;
+    margin-top: 0.15rem;
+    text-align: center;
+}
+.yxhead2-author-key{
+    margin-left: 0.2rem;
+}
+.img-eye{
+    width: 0.22rem;
+    height: 0.16rem;
+    margin-left: 0.2rem;
+}
+.content{
+    padding: 0.5rem 0.2rem 0.2rem;
+    color: #3F3F3F;
+    font-size: 0.24rem;
+    text-indent: 2em;
+}
